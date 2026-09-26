@@ -1,0 +1,33 @@
+/*:root {
+    --largeur-page: 800px;
+}
+*/
+@media (orientation: portrait) {
+    :root {
+        --marge-sup: 10vw;
+/*        
+        --largeur-page: 600px;
+*/
+    }
+}
+
+@media (orientation: landscape) {
+    :root {
+/*
+        --largeur-page: 800px;
+*/
+        --hauteur-img: 100%;
+    }
+}
+
+img {
+    height: var(--hauteur-img);
+}
+body {
+    margin-top: var(--marge-sup);
+/*
+    width: var(--largeur-page);
+    margin-left: auto;
+    margin-right: auto;
+*/
+}

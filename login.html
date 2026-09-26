@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>FermTerap</title>
+
+    <style>
+    </style>
+    
+    <link rel="stylesheet" href="css/themes/themeSpecial.css">
+    <link rel="stylesheet" href="css/pageSimple.css">
+</head>
+
+<body>
+    <h1>
+        <strong><u>FERMTERRAP</u></strong>
+        <br>Votre ferme thérapeuthique
+    </h1>
+    <br><br>
+    <img src="images/Logo.png" alt="Logo">
+    <br><br>
+
+    <script>
+        const precedent = document.referrer
+            ? `<li><a href="${document.referrer}">&lt; Précédent</a></li>`
+            : `<li><a href="FermTerrap.html">&lt; Accueil</a></li>`;
+
+        const contenuMenu = `
+            <nav aria-label="Navigation principale">
+            <ul>
+                ${precedent}
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="user.html">Utilisateur</a></li>
+            </ul>
+            </nav>
+        `;
+    </script>
+    <script src="js/cadreLabel.js"></script>
+    
+    <h2><u>Connexion</u></h2>
+    <p>Conectez-vous à votre compte perso.</p>
+    <br><br><br><br>
+    <h3>(Log In : ...)</h3>
+
+</body>
+</html>

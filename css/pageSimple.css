@@ -1,3 +1,7 @@
 @import url("themes/themeMain.css");
 @import url("marge.css");
 @import url("centrHoriz.css");
+/*
+@import url("dimensions.css");
+*/
+@import url("portraitPaysage.css");

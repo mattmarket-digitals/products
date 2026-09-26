@@ -1,0 +1,11 @@
+:root {
+    --largeur-page: 600px;
+}
+
+html {
+    width: min(var(--largeur-page), 100%);
+/*
+    min-width: 100%;
+    overflow-x: hidden;
+*/
+}

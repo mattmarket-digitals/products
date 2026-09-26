@@ -1,10 +1,12 @@
 :root {
     --marge-horizontale: 10vw;
-    --marge-superieure: 100px;
+    --marge-superieure: 0px;
 }
 
 body {
     margin-left: var(--marge-horizontale);
     margin-right: var(--marge-horizontale);
+/*
     margin-top: var(--marge-superieure);
+*/
 }

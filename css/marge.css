@@ -2,7 +2,7 @@
     --marg_horizontale: 10vw;
 }
 
-body {
+html {
     margin-top: var(--marg_sup);
 
     margin-left: var(--marg_horizontale);

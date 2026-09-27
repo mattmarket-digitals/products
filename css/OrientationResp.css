@@ -1,0 +1,23 @@
+@media (orientation: portrait) {
+    :root {
+        --padd_sup: 50px;
+        --padd_lat: 50px;
+        --univ_width: 400px;
+        --univ_height: auto;
+        
+    }
+}
+
+@media (orientation: landscape) {
+    :root {
+        --hauteur-img: 100%;
+
+        --padd_lat: 100px;
+        --univ_width: 800px;
+        --univ_height: auto;
+    }
+}
+
+img {
+    height: var(--hauteur-img);
+}

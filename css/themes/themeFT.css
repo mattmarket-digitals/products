@@ -1,0 +1,7 @@
+:root{
+    --couleur-background: black;
+    --couleur-texte: #D2B48C;
+    --police-titre: arial;
+    --couleur-accent: green;
+}
+@import url("themes/themeMain.css");

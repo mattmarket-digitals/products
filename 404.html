@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Site en construction</title>
-
+<!--
     <meta http-equiv="refresh" content="0; url=construction.html">
+-->
 </head>
 <body>
+        <h1>Site en construction</h1>
+    <p>Cette page sera bientôt disponible.</p>
+    <script>
+        const precedent = document.referrer
+            ? `<li><a href="${document.referrer}">&lt; Précédent</a></li>`
+            : `<li><a href="FermTerrap.html">&lt; Accueil</a></li>`;
+
+        const contenuMenu = `
+            <nav aria-label="Navigation principale">
+            <ul>
+                ${precedent}
+            </ul>
+            </nav>
+        `;
+    </script>
+    <script src="js/cadreLabel.js"></script>
+
 </body>
 </html>

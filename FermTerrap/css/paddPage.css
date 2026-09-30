@@ -1,0 +1,10 @@
+body {
+    padding-top: var(--padd_sup);
+
+    padding-inline: var(--padd_lat);
+
+/*
+  position: relative;
+  font-family: sans-serif;
+*/
+}

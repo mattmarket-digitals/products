@@ -1,0 +1,22 @@
+/*Pour Html :
+:root{
+    --couleur-background: black;
+    --couleur-texte: white;
+    --police-titre: arial;
+    --couleur-accent: red;
+}
+*/
+
+body {
+    background-color: var(--couleur-background);
+    color: var(--couleur-texte);
+}
+
+h1 {
+    font-family: var(--police-titre);
+    text-align: center;
+}
+
+a {
+    color: var(--couleur-accent);
+}

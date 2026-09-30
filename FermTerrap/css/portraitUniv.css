@@ -1,0 +1,36 @@
+/* Référence : 400 × 800 CSS px */
+html,
+body {
+  /*
+  width: 400px;
+  height: auto;
+  */
+  margin: 0;
+  padding: 0;
+  /*overflow: hidden;*/
+  /*width: 100%;*/
+    min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Zone de rendu */
+/*.app*/
+main{
+/*
+  width: 400px;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+*/
+    width: 100%;
+    max-width: var(--univ_width)/*400px*/;
+    min-height: var(--univ_height)/*800px*/;
+    margin: 0 auto;
+}
+
+

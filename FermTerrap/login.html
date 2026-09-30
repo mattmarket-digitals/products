@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1">
+-->          <!-- , user-scalable=no -->
+    <script src="js/noZoom.js"></script>
+    <title>FermTerap</title>
+
+    <style>
+    </style>
+    
+    <link rel="stylesheet" href="css/themes/themeFT.css">
+    <link rel="stylesheet" href="css/pageResponsive.css">
+</head>
+
+<body>
+<main>
+    <img src="images/LogoFT.png" alt="Logo">
+    <br><br>
+    <h1>
+        <strong><u>FERMTERRAP</u></strong>
+        <br>Votre ferme thérapeuthique
+    </h1>
+    <br><br>
+
+    <script src="js/precedentMenu.js"></script>
+    <script>
+/*
+        const precedent = document.referrer
+            ? `<li><a href="${document.referrer}">&lt; Précédent</a></li>`
+            : `<li><a href="FermTerrap.html">&lt; Accueil</a></li>`;
+*/
+        const contenuMenu = `
+            <nav aria-label="Navigation principale">
+            <ul>
+                ${precedent}
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="user.html">Utilisateur</a></li>
+            </ul>
+            </nav>
+        `;
+    </script>
+    <script src="js/cadreLabel.js"></script>
+    
+    <h2><u>Connexion</u></h2>
+    <p>Conectez-vous à votre compte perso.</p>
+    <br><br><br><br>
+    <h3>(Log In : ...)</h3>
+</main>
+</body>
+</html>

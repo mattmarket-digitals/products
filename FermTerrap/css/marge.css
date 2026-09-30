@@ -1,0 +1,20 @@
+:root{
+    --marg_horizontale: 10vw;
+}
+
+body {
+
+    margin-top: var(--marg_sup);
+
+    margin-left: var(--marg_horizontale);
+    margin-right: var(--marg_horizontale);
+/*
+    padding-top: var(--marg_sup);
+
+    padding-left: var(--marg_horizontale);
+    padding-right: var(--marg_horizontale);
+*/
+/*
+    margin-top: var(--marge-superieure);
+*/
+}

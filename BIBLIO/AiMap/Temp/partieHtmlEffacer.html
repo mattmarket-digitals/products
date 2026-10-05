@@ -1,0 +1,380 @@
+
+<!--
+  <div class="map" id="map" aria-label="Carte interactive stylisée">
+    <svg viewBox="0 0 1000 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="1000" height="760" fill="#e7eee7"/>
+      <path d="M-20 140 C160 90 230 210 370 160 S610 80 780 160 970 190 1040 120" fill="none" stroke="#c9dfd2" stroke-width="32"/>
+      <path d="M-40 560 C130 490 260 620 390 520 S620 440 760 520 920 600 1040 490" fill="none" stroke="#c9dfd2" stroke-width="42"/>
+      <path d="M120 -20 C180 120 110 220 220 330 S310 520 240 790 M600 -20 C540 120 660 250 590 390 S700 600 640 790 M900 -20 C830 120 910 270 820 410 S850 620 930 790" fill="none" stroke="#fff" stroke-width="16"/>
+      <path d="M120 -20 C180 120 110 220 220 330 S310 520 240 790 M600 -20 C540 120 660 250 590 390 S700 600 640 790 M900 -20 C830 120 910 270 820 410 S850 620 930 790" fill="none" stroke="#d4dcd5" stroke-width="2"/>
+      <g fill="#d8e6d8"><rect x="310" y="210" width="90" height="60" rx="12"/><rect x="410" y="290" width="120" height="50" rx="12"/><rect x="700" y="200" width="100" height="80" rx="12"/><rect x="310" y="430" width="100" height="55" rx="12"/><rect x="720" y="440" width="95" height="65" rx="12"/><rect x="120" y="330" width="70" height="90" rx="12"/></g>
+      <g fill="#6d8778" font-size="16" font-family="system-ui" opacity=".85"><text x="280" y="185">Centre-ville</text><text x="670" y="175">Parc des Rives</text><text x="380" y="390">Rue des Tilleuls</text><text x="700" y="560">Quartier du Marché</text><text x="110" y="465">Jardin public</text></g>
+      <g stroke="#fff" stroke-width="7" fill="none"><path d="M0 360 Q210 310 370 400 T700 370 T1000 320"/><path d="M450 0 Q410 180 500 310 T470 560 T530 760"/></g>
+    </svg>
+    <button class="pin p1" data-place="0" aria-label="Maison des Tilleuls"><span>⌂</span></button>
+    <button class="pin p2" data-place="1" aria-label="Café des Rives"><span>☕</span></button>
+    <button class="pin p3" data-place="2" aria-label="Jardin du Marché"><span>🌿</span></button>
+  </div>
+  <div class="top">
+    <button class="search-open" id="openSearch"><span class="magnify">⌕</span><span>Rechercher un lieu ou une adresse</span></button>
+    <button class="avatar" id="profileBtn" title="Compte utilisateur">JD</button>
+  </div>
+  <div class="chips" id="categoryChips">
+    <button class="chip active" data-category="Tout">✦ Tout</button><button class="chip" data-category="Cafés">☕ Cafés</button><button class="chip" data-category="Nature">🌿 Nature</button><button class="chip" data-category="Favoris">♥ Favoris</button><button class="chip" data-category="À proximité">◎ À proximité</button><button class="chip" data-category="Culture">🏛 Culture</button>
+  </div>
+  <div class="info-card" id="updateCard">
+    <div class="info-head"><h3>✦ Mise à jour</h3><button class="mini" id="collapseUpdate" aria-label="Réduire">⌃</button></div>
+    <p>Découvrez les repères près de vous et gardez vos bonnes adresses à portée de main.</p>
+    <div class="row" style="margin-top:10px"><button class="small-btn" id="hideUpdate">Masquer</button><button class="small-btn" id="expandUpdate">En savoir plus</button></div>
+  </div>
+  <div class="map-controls"><button class="fab" id="mapType" title="Type de carte">▧</button><button class="fab" id="gpsBtn" title="Me localiser">◎</button><button class="fab" id="routeBtn" title="Itinéraire">➤</button></div>
+  <div class="zoom-note" id="mapNote">3 repères temporaires · France</div>
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-btn" data-panel="discover"><b>✦</b>Découvertes</button>
+    <button class="nav-btn" data-panel="saved"><b>♡</b>Enregistré</button>
+    <button class="nav-btn" data-panel="contribute"><b>＋</b>Contribuer</button>
+  </nav>
+  <div class="sheet hidden" id="sheet">
+    <div class="sheet-handle" id="sheetHandle" title="Cliquer pour changer la hauteur"><div class="handle"></div></div>
+    <div class="sheet-title"><h2 id="sheetTitle">Découvertes</h2><div class="row"><button class="icon-btn" id="sheetExpand" title="Agrandir/réduire">↕</button><button class="close" id="sheetClose" aria-label="Fermer">×</button></div></div>
+    <div class="sheet-content" id="sheetContent"></div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+-->
+
+<!-- ============================================
+     AiMapCarte.html
+     Partie carte
+     ==========================================-->
+
+<!-- ================ CARTE ================== -->
+<!--
+
+<div
+  class="map"
+  id="map"
+  aria-label="Carte interactive stylisée">
+
+  <svg
+    viewBox="0 0 1000 760"
+    preserveAspectRatio="xMidYMid slice"
+    aria-hidden="true">
+
+    <rect
+      width="1000"
+      height="760"
+      fill="#e7eee7"/>
+
+    <path
+      d="M-20 140 C160 90 230 210 370 160 S610 80 780 160 970 190 1040 120"
+      fill="none"
+      stroke="#c9dfd2"
+      stroke-width="32"/>
+
+    <path
+      d="M-40 560 C130 490 260 620 390 520 S620 440 760 520 920 600 1040 490"
+      fill="none"
+      stroke="#c9dfd2"
+      stroke-width="42"/>
+
+    <path
+      d="M120 -20 C180 120 110 220 220 330 S310 520 240 790
+         M600 -20 C540 120 660 250 590 390 S700 600 640 790
+         M900 -20 C830 120 910 270 820 410 S850 620 930 790"
+      fill="none"
+      stroke="#fff"
+      stroke-width="16"/>
+
+    <path
+      d="M120 -20 C180 120 110 220 220 330 S310 520 240 790
+         M600 -20 C540 120 660 250 590 390 S700 600 640 790
+         M900 -20 C830 120 910 270 820 410 S850 620 930 790"
+      fill="none"
+      stroke="#d4dcd5"
+      stroke-width="2"/>
+
+    <g
+      fill="#d8e6d8">
+
+      <rect
+        x="310"
+        y="210"
+        width="90"
+        height="60"
+        rx="12"/>
+
+      <rect
+        x="410"
+        y="290"
+        width="120"
+        height="50"
+        rx="12"/>
+
+      <rect
+        x="700"
+        y="200"
+        width="100"
+        height="80"
+        rx="12"/>
+
+      <rect
+        x="310"
+        y="430"
+        width="100"
+        height="55"
+        rx="12"/>
+
+      <rect
+        x="720"
+        y="440"
+        width="95"
+        height="65"
+        rx="12"/>
+
+      <rect
+        x="120"
+        y="330"
+        width="70"
+        height="90"
+        rx="12"/>
+
+    </g>
+
+    <g
+      fill="#6d8778"
+      font-size="16"
+      font-family="system-ui"
+      opacity=".85">
+
+      <text x="280" y="185">
+        Centre-ville
+      </text>
+
+      <text x="670" y="175">
+        Parc des Rives
+      </text>
+
+      <text x="380" y="390">
+        Rue des Tilleuls
+      </text>
+
+      <text x="700" y="560">
+        Quartier du Marché
+      </text>
+
+      <text x="110" y="465">
+        Jardin public
+      </text>
+
+    </g>
+
+    <g
+      stroke="#fff"
+      stroke-width="7"
+      fill="none">
+
+      <path
+        d="M0 360 Q210 310 370 400 T700 370 T1000 320"/>
+
+      <path
+        d="M450 0 Q410 180 500 310 T470 560 T530 760"/>
+
+    </g>
+
+  </svg>
+
+-->
+  <!-- ============== REPÈRES =============== -->
+<!--
+
+  <button
+    class="pin p1"
+    data-place="0"
+    aria-label="Maison des Tilleuls">
+    <span>⌂</span>
+  </button>
+
+  <button
+    class="pin p2"
+    data-place="1"
+    aria-label="Café des Rives">
+    <span>☕</span>
+  </button>
+
+  <button
+    class="pin p3"
+    data-place="2"
+    aria-label="Jardin du Marché">
+    <span>🌿</span>
+  </button>
+
+</div>
+
+-->
+<!-- ============ RECHERCHE CARTE ============ -->
+<!--
+
+<div class="top">
+
+  <button
+    class="search-open"
+    id="openSearch">
+
+    <span class="magnify">
+      ⌕
+    </span>
+
+    <span>
+      Rechercher un lieu ou une adresse
+    </span>
+
+  </button>
+
+  <button
+    class="avatar"
+    id="profileBtn"
+    title="Compte utilisateur">
+    JD
+  </button>
+
+</div>
+
+-->
+<!-- ============= CATÉGORIES ================ -->
+<!--
+
+<div
+  class="chips"
+  id="categoryChips">
+
+  <button
+    class="chip active"
+    data-category="Tout">
+    ✦ Tout
+  </button>
+
+  <button
+    class="chip"
+    data-category="Cafés">
+    ☕ Cafés
+  </button>
+
+  <button
+    class="chip"
+    data-category="Nature">
+    🌿 Nature
+  </button>
+
+  <button
+    class="chip"
+    data-category="Favoris">
+    ♥ Favoris
+  </button>
+
+  <button
+    class="chip"
+    data-category="À proximité">
+    ◎ À proximité
+  </button>
+
+  <button
+    class="chip"
+    data-category="Culture">
+    🏛 Culture
+  </button>
+
+</div>
+
+-->
+
+<!-- ========= CARTE D'INFORMATION =========== -->
+<!--
+
+<div
+  class="info-card"
+  id="updateCard">
+
+  <div class="info-head">
+
+    <h3>
+      ✦ Mise à jour
+    </h3>
+
+    <button
+      class="mini"
+      id="collapseUpdate"
+      aria-label="Réduire">
+      ⌃
+    </button>
+
+  </div>
+
+  <p>
+    Découvrez les repères près de vous et gardez
+    vos bonnes adresses à portée de main.
+  </p>
+
+  <div
+    class="row"
+    style="margin-top:10px">
+
+    <button
+      class="small-btn"
+      id="hideUpdate">
+      Masquer
+    </button>
+
+    <button
+      class="small-btn"
+      id="expandUpdate">
+      En savoir plus
+    </button>
+
+  </div>
+
+</div>
+
+-->
+
+<!-- ========== CONTRÔLES CARTE ============= -->
+<!--
+
+<div class="map-controls">
+
+  <button
+    class="fab"
+    id="mapType"
+    title="Type de carte">
+    ▧
+  </button>
+
+  <button
+    class="fab"
+    id="gpsBtn"
+    title="Me localiser">
+    ◎
+  </button>
+
+  <button
+    class="fab"
+    id="routeBtn"
+    title="Itinéraire">
+    ➤
+  </button>
+
+</div>
+
+-->
+
+<!-- ============ INFORMATION CARTE ========== -->
+<!--
+
+<div
+  class="zoom-note"
+  id="mapNote">
+  3 repères temporaires · France
+</div>
+
+-->
+
+

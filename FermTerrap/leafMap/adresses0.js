@@ -1,0 +1,5 @@
+const places = [
+ {id:1,name:"Maison des Tilleuls",kind:"Maison & patrimoine",category:"Culture",distance:"350 m",rating:"4,7 ★ · 28 avis",hours:"Aujourd’hui · 09:00–18:00",phone:"+33 3 88 00 00 01",web:"https://example.com/tilleuls",city:"Dabo (adresse provisoire)",address:"12 rue des Tilleuls, 57850 Dabo, France",emoji:"🏡",photo:"🏠",folder:"À visiter"},
+ {id:2,name:"Café des Rives",kind:"Café",category:"Cafés",distance:"620 m",rating:"4,5 ★ · 46 avis",hours:"Ouvert · ferme à 19:00",phone:"+33 3 88 00 00 02",web:"https://example.com/rives",city:"Saverne (adresse provisoire)",address:"4 quai des Rives, 67700 Saverne, France",emoji:"☕",photo:"🥐",folder:"Mes favoris"},
+ {id:3,name:"Jardin du Marché",kind:"Parc & nature",category:"Nature",distance:"1,2 km",rating:"4,8 ★ · 63 avis",hours:"Ouvert · accès libre",phone:"+33 3 88 00 00 03",web:"https://example.com/jardin",city:"Strasbourg (adresse provisoire)",address:"8 place du Marché, 67000 Strasbourg, France",emoji:"🌳",photo:"🌿",folder:"À visiter"}
+];

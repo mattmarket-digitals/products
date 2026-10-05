@@ -1,0 +1,105 @@
+rel dans une balise <link> indique la relation entre le document HTML et la ressource liée. stylesheet est simplement l'une des valeurs possibles.
+
+Voici les principales que tu rencontreras.
+
+rel	Utilité	Exemple
+
+stylesheet	Feuille CSS	<link rel="stylesheet" href="style.css">
+icon	Icône de l'onglet / favicon	<link rel="icon" href="favicon.ico">
+alternate	Version alternative du document	<link rel="alternate" href="..." hreflang="en">
+canonical	Indique l'URL principale d'une page aux moteurs de recherche	<link rel="canonical" href="https://...">
+author	Indique une ressource concernant l'auteur	<link rel="author" href="...">
+manifest	Lie un manifeste d'application web (PWA)	<link rel="manifest" href="manifest.json">
+preload	Demande au navigateur de charger rapidement une ressource qui sera bientôt utilisée	<link rel="preload" href="police.woff2" as="font">
+prefetch	Suggère de charger une ressource probablement utilisée plus tard	<link rel="prefetch" href="page2.html">
+dns-prefetch	Prépare une connexion DNS vers un autre domaine	<link rel="dns-prefetch" href="//exemple.com">
+preconnect	Prépare une connexion complète vers un autre serveur	<link rel="preconnect" href="https://fonts.example.com">
+next	Indique la page suivante d'une série	<link rel="next" href="page2.html">
+prev	Indique la page précédente d'une série	<link rel="prev" href="page1.html">
+
+
+Les plus importants pour ton usage
+
+Pour ton projet, je pense que tu rencontreras surtout ceux-ci :
+
+1. Charger du CSS
+
+<link rel="stylesheet" href="style.css">
+
+C'est celui que nous utilisions précédemment.
+
+2. Charger une favicon
+
+<link rel="icon" href="favicon.png">
+
+Cela donne par exemple :
+
+🌐 MattMarket
+
+avec ton icône à côté du titre dans l'onglet.
+
+3. Charger un manifeste
+
+Si un jour tu transformes ton site en application installable :
+
+<link rel="manifest" href="manifest.json">
+
+4. Optimiser le chargement d'une ressource
+
+Par exemple une police qui sera nécessaire immédiatement :
+
+<link
+    rel="preload"
+    href="police.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+>
+
+preload est toutefois à utiliser avec discernement : précharger inutilement des ressources peut au contraire dégrader les performances.
+
+
+---
+
+Et il existe une autre subtilité intéressante
+
+rel n'est pas limité aux <link>.
+
+On peut également rencontrer :
+
+<a href="..." rel="nofollow">...</a>
+
+ou :
+
+<a href="..." rel="noopener">...</a>
+
+Ici, rel décrit la relation avec la page vers laquelle le lien pointe, plutôt qu'une relation avec une ressource chargée dans <head>.
+
+Par exemple :
+
+<a href="https://exemple.com" target="_blank" rel="noopener">
+    Visiter le site
+</a>
+
+noopener empêche notamment la nouvelle page ouverte avec target="_blank" d'avoir accès à l'objet window de ta page.
+
+
+---
+
+À retenir :
+
+<link rel="..." href="...">
+
+peut se lire comme :
+
+> « Le fichier indiqué par href entretient la relation rel avec cette page HTML. »
+
+
+
+Et stylesheet signifie donc :
+
+> « Ce fichier est une feuille de style CSS de cette page. »
+
+
+
+Il existe aussi des valeurs moins courantes et des valeurs spécifiques à certains contextes. Si tu veux construire une architecture HTML propre, je peux aussi te faire une **« carte » des balises `<head>` (`title`, `meta`, `link`, `style`, `script`, etc.) avec le rôle précis de chacune**.

@@ -1,0 +1,76 @@
+Depart:
+    cadre tous les repères
+        barre de recherche - fixe et cliquable
+            avatar du compte user
+        categories/favoris - en-dessous, défilement latéral
+        carte - visitable
+        panneau info: "mise à jour" - semi-reduction, possible: reduc max/enlever, developper
+        panneau bas fixe: decouvertes, enregistré, contribuer
+        boutons:
+            type de carte/aff details - en haut
+            recentre gps - en bas (demande localisation gps)
+            itineraire
+
+barre de recherche - ouvre fenetre
+    barre rech.
+        entrer mots recherchés
+            carte visible: cadre tous les points des adresses
+            panneau semi-developpé - barre de réduction/agrandissement
+            défil horizontal - haut: max-dev, bas: min-dev (mots+boutons+dessous: filtres)
+            clic barre-réduc si max ou min: aff semi-dev
+            "mots recherchés" + bouton annuler
+            listes resultats
+                chaque resultat: ·info
+                    nom
+                    distance
+                    avis
+                    horaires
+                    tel
+                    web
+                    ville
+                ·actions:
+                    itineraire
+                    appeler
+                    visiter site
+                    partager
+                    enregistrer
+    favoris enregistré - dessous, défil. (maison, fav...) avec distances actuelles
+    recherches precedentes - (barre ou clic plan) croix pour suppression individuelle
+    suggestions
+ 
+panneau bas - cliqué
+    panneau info développé max avec barre de reduc (ou carte visible: semi, max, enlever)
+        decouvertes - suggestions
+        enregistrés
+            Part1: lieux saved récents - semi-réduit avec "tout afficher"
+                aide haut: icone pour rechercher int., filtres (dossiers, zone, ...), 
+                lieux - ordre chrono avec photo et dossier (icone et nom), 
+                "tout aff": tout afficher avec défil. - panneau dev max (croix pour reduc)
+            Part2: dossiers lieux saved - semi-réduit avec "voir plus"
+                titre + "Nouveau dossier"
+                    "Nouv. doss." + croix: annuler
+                    icone à personnaliser
+                    entrer nom
+                    entrer description
+                    partage privé/publique
+                    bouton "Créer"
+                dossiers avec icones - partage et nombre
+                    clic sur dossier - carte visible: cadre tous les points des adresses
+                    panneau semi-developpé - barre de réduction/agrandissement
+                        défil - haut: max-dev, bas: min-dev (nom+boutons)
+                        clic barre-réduc si max ou min: aff semi-dev
+                        nom dossier
+                        boutons: modifier, partage, annuler
+                        liste adresses: nom, distance, photos
+                            clic - panneau max-dev et marquage carte 
+                            même comportement panneau (min-dev: nom lieux, icone saved cliquable, partage, annuler)
+                            "voir plus": developpe liste avec défilement
+        contribuer: panneau max-dev
+            avatar compte perso et points
+            modifications défil lateral
+                ajouter lieu
+                modifier lieu
+                ajouter avis
+                ajouter photo
+            Obtenir badge
+                3 objectifs

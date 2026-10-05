@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catalogue De Polices</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Raleway:wght@400;700&family=Oswald:wght@400;700&family=Playfair+Display:wght@400;700&family=Merriweather:wght@400;700&family=Roboto+Slab:wght@400;700&family=Bebas+Neue&family=Pacifico&family=Lobster&family=Dancing+Script:wght@400;700&family=Permanent+Marker&family=Indie+Flower&family=Shadows+Into+Light&family=Caveat:wght@400;700&family=Comfortaa:wght@400;700&family=Quicksand:wght@400;700&family=Nunito:wght@400;700&family=Ubuntu:wght@400;700&family=Fira+Sans:wght@400;700&family=Work+Sans:wght@400;700&family=Barlow:wght@400;700&family=Archivo:wght@400;700&family=DM+Sans:wght@400;700&family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&family=Josefin+Sans:wght@400;700&family=Karla:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;700&family=EB+Garamond:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Bitter:wght@400;700&family=Arvo:wght@400;700&family=Zilla+Slab:wght@400;700&family=Courier+Prime:wght@400;700&family=Source+Code+Pro:wght@400;700&family=Roboto+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;700&family=Fira+Code:wght@400;700&family=Press+Start+2P&family=Righteous&family=Alfa+Slab+One&family=Anton&family=Archivo+Black&family=Black+Ops+One&family=Bungee&family=Chakra+Petch:wght@400;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&family=Audiowide&family=Exo+2:wght@400;700&family=Russo+One&family=Staatliches&family=Kanit:wght@400;700&family=Acme&family=Amatic+SC:wght@400;700&family=Architects+Daughter&family=Cookie&family=Courgette&family=Great+Vibes&family=Kaushan+Script&family=Marck+Script&family=Oleo+Script:wght@400;700&family=Satisfy&family=Yellowtail&family=UnifrakturCook:wght@700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           VARIABLES
+        ========================================= */
+
+        :root {
+            --background: #f4f4f4;
+            --card-background: #ffffff;
+            --text: #202020;
+            --secondary: #777777;
+            --border: #dddddd;
+            --accent: #222222;
+        }
+
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        header {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--secondary);
+            font-size: 16px;
+        }
+
+
+        /* =========================================
+           CONTAINER
+        ========================================= */
+
+        .font-list {
+            max-width: 1200px;
+            margin: auto;
+            background: var(--card-background);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           FONT ROW
+        ========================================= */
+
+        .font-row {
+            display: flex;
+            align-items: center;
+            min-height: 90px;
+            padding: 15px 25px;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s ease;
+        }
+
+        .font-row:last-child {
+            border-bottom: none;
+        }
+
+        .font-row:hover {
+            background: #fafafa;
+        }
+
+
+        .font-name {
+            width: 280px;
+            flex-shrink: 0;
+            color: var(--secondary);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        .font-preview {
+            font-size: 32px;
+            line-height: 1.2;
+            color: var(--text);
+        }
+
+
+        /* =========================================
+           GOOGLE FONTS
+        ========================================= */
+
+        .Roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .Open-Sans {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .Lato {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .Montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .Poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .Raleway {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .Oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .Playfair-Display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .Merriweather {
+            font-family: 'Merriweather', serif;
+        }
+
+        .Roboto-Slab {
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .Bebas-Neue {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .Pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+
+        .Lobster {
+            font-family: 'Lobster', cursive;
+        }
+
+        .Dancing-Script {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .Permanent-Marker {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .Indie-Flower {
+            font-family: 'Indie Flower', cursive;
+        }
+
+        .Shadows-Into-Light {
+            font-family: 'Shadows Into Light', cursive;
+        }
+
+        .Caveat {
+            font-family: 'Caveat', cursive;
+        }
+
+        .Comfortaa {
+            font-family: 'Comfortaa', sans-serif;
+        }
+
+        .Quicksand {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .Nunito {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .Ubuntu {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .Fira-Sans {
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        .Work-Sans {
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .Barlow {
+            font-family: 'Barlow', sans-serif;
+        }
+
+        .Archivo {
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .DM-Sans {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .Manrope {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .Space-Grotesk {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .Josefin-Sans {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .Karla {
+            font-family: 'Karla', sans-serif;
+        }
+
+        .Libre-Baskerville {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .Crimson-Text {
+            font-family: 'Crimson Text', serif;
+        }
+
+        .EB-Garamond {
+            font-family: 'EB Garamond', serif;
+        }
+
+        .Cormorant-Garamond {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .Bitter {
+            font-family: 'Bitter', serif;
+        }
+
+        .Arvo {
+            font-family: 'Arvo', serif;
+        }
+
+        .Zilla-Slab {
+            font-family: 'Zilla Slab', serif;
+        }
+
+        .Courier-Prime {
+            font-family: 'Courier Prime', monospace;
+        }
+
+        .Source-Code-Pro {
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .Roboto-Mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .IBM-Plex-Mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .Fira-Code {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .Press-Start-2P {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .Righteous {
+            font-family: 'Righteous', cursive;
+        }
+
+        .Alfa-Slab-One {
+            font-family: 'Alfa Slab One', serif;
+        }
+
+        .Anton {
+            font-family: 'Anton', sans-serif;
+        }
+
+        .Archivo-Black {
+            font-family: 'Archivo Black', sans-serif;
+        }
+
+        .Black-Ops-One {
+            font-family: 'Black Ops One', cursive;
+        }
+
+        .Bungee {
+            font-family: 'Bungee', cursive;
+        }
+
+        .Chakra-Petch {
+            font-family: 'Chakra Petch', sans-serif;
+        }
+
+        .Orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .Rajdhani {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .Audiowide {
+            font-family: 'Audiowide', cursive;
+        }
+
+        .Exo-2 {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .Russo-One {
+            font-family: 'Russo One', sans-serif;
+        }
+
+        .Staatliches {
+            font-family: 'Staatliches', cursive;
+        }
+
+        .Kanit {
+            font-family: 'Kanit', sans-serif;
+        }
+
+        .Acme {
+            font-family: 'Acme', sans-serif;
+        }
+
+        .Amatic-SC {
+            font-family: 'Amatic SC', cursive;
+        }
+
+        .Architects-Daughter {
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        .Cookie {
+            font-family: 'Cookie', cursive;
+        }
+
+        .Courgette {
+            font-family: 'Courgette', cursive;
+        }
+
+        .Great-Vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .Kaushan-Script {
+            font-family: 'Kaushan Script', cursive;
+        }
+
+        .Marck-Script {
+            font-family: 'Marck Script', cursive;
+        }
+
+        .Oleo-Script {
+            font-family: 'Oleo Script', cursive;
+        }
+
+        .Satisfy {
+            font-family: 'Satisfy', cursive;
+        }
+
+        .Yellowtail {
+            font-family: 'Yellowtail', cursive;
+        }
+
+        .UnifrakturCook {
+            font-family: 'UnifrakturCook', cursive;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            .font-row {
+                display: block;
+                padding: 20px;
+            }
+
+            .font-name {
+                width: auto;
+                margin-bottom: 10px;
+            }
+
+            .font-preview {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>Catalogue De Polices</h1>
+        <p>Une Sélection De Polices D'Écriture</p>
+    </header>
+
+
+    <main class="font-list">
+
+        <div class="font-row">
+            <div class="font-name">Roboto</div>
+            <div class="font-preview Roboto">Roboto</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Open Sans</div>
+            <div class="font-preview Open-Sans">Open Sans</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Lato</div>
+            <div class="font-preview Lato">Lato</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Montserrat</div>
+            <div class="font-preview Montserrat">Montserrat</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Poppins</div>
+            <div class="font-preview Poppins">Poppins</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Raleway</div>
+            <div class="font-preview Raleway">Raleway</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Oswald</div>
+            <div class="font-preview Oswald">Oswald</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Playfair Display</div>
+            <div class="font-preview Playfair-Display">Playfair Display</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Merriweather</div>
+            <div class="font-preview Merriweather">Merriweather</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Roboto Slab</div>
+            <div class="font-preview Roboto-Slab">Roboto Slab</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Bebas Neue</div>
+            <div class="font-preview Bebas-Neue">Bebas Neue</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Pacifico</div>
+            <div class="font-preview Pacifico">Pacifico</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Lobster</div>
+            <div class="font-preview Lobster">Lobster</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Dancing Script</div>
+            <div class="font-preview Dancing-Script">Dancing Script</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Permanent Marker</div>
+            <div class="font-preview Permanent-Marker">Permanent Marker</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Indie Flower</div>
+            <div class="font-preview Indie-Flower">Indie Flower</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Shadows Into Light</div>
+            <div class="font-preview Shadows-Into-Light">Shadows Into Light</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Caveat</div>
+            <div class="font-preview Caveat">Caveat</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Comfortaa</div>
+            <div class="font-preview Comfortaa">Comfortaa</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Quicksand</div>
+            <div class="font-preview Quicksand">Quicksand</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Nunito</div>
+            <div class="font-preview Nunito">Nunito</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Ubuntu</div>
+            <div class="font-preview Ubuntu">Ubuntu</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Fira Sans</div>
+            <div class="font-preview Fira-Sans">Fira Sans</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Work Sans</div>
+            <div class="font-preview Work-Sans">Work Sans</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Barlow</div>
+            <div class="font-preview Barlow">Barlow</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Archivo</div>
+            <div class="font-preview Archivo">Archivo</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">DM Sans</div>
+            <div class="font-preview DM-Sans">DM Sans</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Manrope</div>
+            <div class="font-preview Manrope">Manrope</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Space Grotesk</div>
+            <div class="font-preview Space-Grotesk">Space Grotesk</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Josefin Sans</div>
+            <div class="font-preview Josefin-Sans">Josefin Sans</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Karla</div>
+            <div class="font-preview Karla">Karla</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Libre Baskerville</div>
+            <div class="font-preview Libre-Baskerville">Libre Baskerville</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Crimson Text</div>
+            <div class="font-preview Crimson-Text">Crimson Text</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">EB Garamond</div>
+            <div class="font-preview EB-Garamond">EB Garamond</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Cormorant Garamond</div>
+            <div class="font-preview Cormorant-Garamond">Cormorant Garamond</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Bitter</div>
+            <div class="font-preview Bitter">Bitter</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Arvo</div>
+            <div class="font-preview Arvo">Arvo</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Zilla Slab</div>
+            <div class="font-preview Zilla-Slab">Zilla Slab</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Courier Prime</div>
+            <div class="font-preview Courier-Prime">Courier Prime</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Source Code Pro</div>
+            <div class="font-preview Source-Code-Pro">Source Code Pro</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Roboto Mono</div>
+            <div class="font-preview Roboto-Mono">Roboto Mono</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">IBM Plex Mono</div>
+            <div class="font-preview IBM-Plex-Mono">IBM Plex Mono</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Fira Code</div>
+            <div class="font-preview Fira-Code">Fira Code</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Press Start 2P</div>
+            <div class="font-preview Press-Start-2P">Press Start 2P</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Righteous</div>
+            <div class="font-preview Righteous">Righteous</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Alfa Slab One</div>
+            <div class="font-preview Alfa-Slab-One">Alfa Slab One</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Anton</div>
+            <div class="font-preview Anton">Anton</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Archivo Black</div>
+            <div class="font-preview Archivo-Black">Archivo Black</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Black Ops One</div>
+            <div class="font-preview Black-Ops-One">Black Ops One</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Bungee</div>
+            <div class="font-preview Bungee">Bungee</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Chakra Petch</div>
+            <div class="font-preview Chakra-Petch">Chakra Petch</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Orbitron</div>
+            <div class="font-preview Orbitron">Orbitron</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Rajdhani</div>
+            <div class="font-preview Rajdhani">Rajdhani</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Audiowide</div>
+            <div class="font-preview Audiowide">Audiowide</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Exo 2</div>
+            <div class="font-preview Exo-2">Exo 2</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Russo One</div>
+            <div class="font-preview Russo-One">Russo One</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Staatliches</div>
+            <div class="font-preview Staatliches">Staatliches</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Kanit</div>
+            <div class="font-preview Kanit">Kanit</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Acme</div>
+            <div class="font-preview Acme">Acme</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Amatic SC</div>
+            <div class="font-preview Amatic-SC">Amatic SC</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Architects Daughter</div>
+            <div class="font-preview Architects-Daughter">Architects Daughter</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Cookie</div>
+            <div class="font-preview Cookie">Cookie</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Courgette</div>
+            <div class="font-preview Courgette">Courgette</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Great Vibes</div>
+            <div class="font-preview Great-Vibes">Great Vibes</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Kaushan Script</div>
+            <div class="font-preview Kaushan-Script">Kaushan Script</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Marck Script</div>
+            <div class="font-preview Marck-Script">Marck Script</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Oleo Script</div>
+            <div class="font-preview Oleo-Script">Oleo Script</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Satisfy</div>
+            <div class="font-preview Satisfy">Satisfy</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">Yellowtail</div>
+            <div class="font-preview Yellowtail">Yellowtail</div>
+        </div>
+
+        <div class="font-row">
+            <div class="font-name">UnifrakturCook</div>
+            <div class="font-preview UnifrakturCook">UnifrakturCook</div>
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,1 +1,0 @@
-setInterval(afficherDimensions, 5000);

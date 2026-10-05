@@ -1,9 +1,0 @@
-body {
-    width: min(var(--dim_largeur-page), 100%);
-    /*var(--dim_largeur-page);*/
-    margin-inline: auto;
-/*
-    min-width: 100%;
-    overflow-x: hidden;
-*/
-}

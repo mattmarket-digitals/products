@@ -97,17 +97,54 @@ function openSheet(panel,size="mid"){
 
 
 function setSize(size){
-
   sheetSize = size;
-
   sheet.classList.remove(
     "min",
     "mid",
     "max"
   );
-
   sheet.classList.add(size);
-
+  /*
+   * ==========================================
+   * ÉLÉMENTS SUPÉRIEURS
+   * ==========================================
+   *
+   * top + chips disparaissent uniquement
+   * lorsque le sheet est au maximum.
+   */
+  const isMax = size === "max";
+$(".top")?.classList.toggle(
+  "map-ui-hidden",
+  isMax
+);
+$(".chips")?.classList.toggle(
+  "map-ui-hidden",
+  isMax
+);
+  /*
+   * ==========================================
+   * CONTRÔLES DE CARTE
+   * ==========================================
+   *
+   * Ils sont visibles uniquement lorsque
+   * le sheet est min ou qu'aucun sheet n'est ouvert.
+   *
+   * min  → visibles
+   * mid  → cachés
+   * max  → cachés
+   */
+  const hideMapControls =
+    size === "mid" ||
+    size === "max";
+  $(".map-controls")?.classList.toggle(
+    "map-controls-hidden",
+    hideMapControls
+  );
+  /*
+   * ==========================================
+   * BOUTON AGRANDIR / RÉDUIRE
+   * ==========================================
+   */
   $("#sheetExpand").textContent =
     size === "max"
       ? "⌄"
@@ -118,18 +155,39 @@ function setSize(size){
 
 
 function closeSheet(){
-
   sheet.classList.add("hidden");
-
   activePanel = null;
   selectedFolder = null;
   searchMode = false;
-
+  /* =========================================
+     TOP + CHIPS
+     ========================================= */
+  const top = $(".top");
+  const chips = $(".chips");
+  if (top) {
+    top.classList.remove("map-ui-hidden");
+    top.classList.remove("search-hidden");
+  }
+  if (chips) {
+    chips.classList.remove("map-ui-hidden");
+    chips.classList.remove("search-hidden");
+  }
+  /* =========================================
+     CONTRÔLES DE CARTE
+     ========================================= */
+  const mapControls = $(".map-controls");
+  if (mapControls) {
+    mapControls.classList.remove(
+      "map-controls-hidden"
+    );
+  }
+  /* =========================================
+     NAVIGATION
+     ========================================= */
   $$(".nav-btn").forEach(
     b => b.classList.remove("active")
   );
 }
-
 
 function toggleSheetSize(){
 
@@ -1255,12 +1313,10 @@ function doSearch(){
 
   openSheet("search","max");
 
-  setTimeout(
-    () => $("#queryInput")?.focus(),
-    60
-  );
+  setTimeout(() => {
+    $("#queryInput")?.focus();
+  }, 60);
 }
-
 
 /* ---------------------------------------------------------
    Événements principaux

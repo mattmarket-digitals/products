@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Repères — prototype</title>
+<!--
+<link rel="stylesheet" href="./AiMap0.css">
+-->
+<link rel="stylesheet" href="leafMap/AiMapUI.css">
+<link rel="stylesheet" href="leafMap/AiMapCarte1.css">
+<style></style>
+</head>
+<body>
+<div class="app" id="app">
+
+<!--***********Début App**********************-->
+
+<!--***********************************
+     AiMapCarte.html
+     Version Leaflet / OpenStreetMap
+************************************-->
+
+
+<!-- ================ CARTE ================== -->
+
+<div
+  class="map"
+  id="map"
+  aria-label="Carte interactive">
+
+  <!--
+    Leaflet initialise automatiquement la carte
+    dans ce conteneur depuis AiMapCarte1leaf.js.
+  -->
+
+</div>
+
+
+<!-- ============ RECHERCHE CARTE ============ -->
+
+<div class="top">
+
+  <button
+    class="search-open"
+    id="openSearch"
+    type="button">
+
+    <span class="magnify">
+      ⌕
+    </span>
+
+    <span>
+      Rechercher un lieu ou une adresse
+    </span>
+
+  </button>
+
+
+  <button
+    class="avatar"
+    id="profileBtn"
+    type="button"
+    title="Compte utilisateur">
+
+    JD
+
+  </button>
+
+</div>
+
+
+<!-- ============= CATÉGORIES ================ -->
+
+<div
+  class="chips"
+  id="categoryChips">
+
+  <button
+    class="chip active"
+    data-category="Tout"
+    type="button">
+
+    ✦ Tout
+
+  </button>
+
+
+  <button
+    class="chip"
+    data-category="Cafés"
+    type="button">
+
+    ☕ Cafés
+
+  </button>
+
+
+  <button
+    class="chip"
+    data-category="Nature"
+    type="button">
+
+    🌿 Nature
+
+  </button>
+
+
+  <button
+    class="chip"
+    data-category="Favoris"
+    type="button">
+
+    ♥ Favoris
+
+  </button>
+
+
+  <button
+    class="chip"
+    data-category="À proximité"
+    type="button">
+
+    ◎ À proximité
+
+  </button>
+
+
+  <button
+    class="chip"
+    data-category="Culture"
+    type="button">
+
+    🏛 Culture
+
+  </button>
+
+</div>
+
+
+<!-- ========= CARTE D'INFORMATION =========== -->
+
+<div
+  class="info-card"
+  id="updateCard">
+
+  <div class="info-head">
+
+    <h3>
+      ✦ Mise à jour
+    </h3>
+
+
+    <button
+      class="mini"
+      id="collapseUpdate"
+      type="button"
+      aria-label="Réduire">
+
+      ⌃
+
+    </button>
+
+  </div>
+
+
+  <p>
+
+    Découvrez les repères près de vous et gardez
+    vos bonnes adresses à portée de main.
+
+  </p>
+
+
+  <div
+    class="row"
+    style="margin-top:10px">
+
+    <button
+      class="small-btn"
+      id="hideUpdate"
+      type="button">
+
+      Masquer
+
+    </button>
+
+
+    <button
+      class="small-btn"
+      id="expandUpdate"
+      type="button">
+
+      En savoir plus
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- ========== CONTRÔLES CARTE ============= -->
+
+<div class="map-controls">
+
+
+  <!-- Type de fond cartographique -->
+
+  <button
+    class="fab"
+    id="mapType"
+    type="button"
+    title="Type de carte">
+
+    ▧
+
+  </button>
+
+
+  <!-- Géolocalisation -->
+
+  <button
+    class="fab"
+    id="gpsBtn"
+    type="button"
+    title="Me localiser">
+
+    ◎
+
+  </button>
+
+
+  <!-- Itinéraire -->
+
+  <button
+    class="fab"
+    id="routeBtn"
+    type="button"
+    title="Itinéraire">
+
+    ➤
+
+  </button>
+
+</div>
+
+
+<!-- ============ INFORMATION CARTE ========== -->
+
+<div
+  class="zoom-note"
+  id="mapNote">
+
+  3 repères temporaires · France
+
+</div>
+
+
+<!-- =============================================
+     AiMapUI.html
+     Interface générale
+     ========================================= -->
+
+
+<!-- ========= NAVIGATION PRINCIPALE ========= -->
+
+<nav
+  class="bottom-nav"
+  id="bottomNav">
+
+  <button
+    class="nav-btn"
+    data-panel="discover">
+
+    <b>✦</b>
+
+    Découvertes
+
+  </button>
+
+  <button
+    class="nav-btn"
+    data-panel="saved">
+
+    <b>♡</b>
+
+    Enregistré
+
+  </button>
+
+  <button
+    class="nav-btn"
+    data-panel="contribute">
+
+    <b>＋</b>
+
+    Contribuer
+
+  </button>
+
+</nav>
+
+
+<!-- ============ PANNEAU / SHEET ============ -->
+
+<div
+  class="sheet hidden"
+  id="sheet">
+
+
+  <!-- ---------- Poignée ---------- -->
+
+  <div
+    class="sheet-handle"
+    id="sheetHandle"
+    title="Cliquer pour changer la hauteur">
+
+    <div class="handle"></div>
+
+  </div>
+
+
+  <!-- ---------- En-tête ---------- -->
+
+  <div class="sheet-title">
+
+    <h2 id="sheetTitle">
+      Découvertes
+    </h2>
+
+    <div class="row">
+
+      <button
+        class="icon-btn"
+        id="sheetExpand"
+        title="Agrandir/réduire">
+        ↕
+      </button>
+
+      <button
+        class="close"
+        id="sheetClose"
+        aria-label="Fermer">
+        ×
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ---------- Contenu dynamique ---------- -->
+
+  <div
+    class="sheet-content"
+    id="sheetContent">
+  </div>
+
+
+</div>
+
+
+<!-- ============= NOTIFICATION ============== -->
+
+<div
+  class="toast"
+  id="toast"
+  role="status">
+</div>
+
+<!--*****************Fin App******************-->
+</div>
+
+
+<!-- ============================================
+     DONNÉES
+============================================== -->
+
+<script src="./leafMap/adresses0.js"></script>
+
+
+<!-- =============================================
+     LEAFLET
+============================================== -->
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  crossorigin=""
+>
+
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  crossorigin="">
+</script>
+
+
+<!-- =============================================
+     APPLICATION
+============================================== -->
+
+<script src="leafMap/AiMapUI.js"></script>
+
+<script src="leafMap/AiMapCarte1leaf.js"></script>
+
+
+</body>
+</html>

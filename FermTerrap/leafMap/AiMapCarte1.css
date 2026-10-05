@@ -174,7 +174,33 @@
 
   box-shadow: 0 6px 18px rgba(20,45,34,.18);
 }
+/* ==================== RECHERCHE ACTIVE ==================== */
 
+.top.search-hidden,
+.chips.search-hidden {
+  display: none;
+}
+/* =========================================================
+   Éléments supérieurs masqués lorsque le panneau est maximal
+   ========================================================= */
+
+.top.map-ui-hidden,
+.chips.map-ui-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+}
+
+/* Animation */
+
+.top,
+.chips {
+  transition:
+    opacity .2s ease,
+    visibility .2s ease,
+    transform .2s ease;
+}
 /* ==================== CATÉGORIES ==================== */
 
 .chips {
@@ -285,13 +311,18 @@
   position: absolute;
 
   right: 16px;
-  bottom: 118px;
+  bottom: 170px !important;
 
   z-index: 500;
 
   display: flex;
   flex-direction: column;
   gap: 9px;
+  
+  transition:
+    opacity .2s ease,
+    visibility .2s ease,
+    transform .2s ease;
 }
 
 .fab {
@@ -317,7 +348,15 @@
 .fab:active {
   transform: scale(.96);
 }
+/* Contrôles masqués */
 
+.map-controls.map-controls-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+
+  transform: translateY(10px);
+}
 /* ==================== NOTE CARTE ==================== */
 
 .zoom-note {

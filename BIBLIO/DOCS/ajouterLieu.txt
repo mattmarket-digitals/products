@@ -1,0 +1,12 @@
+Ajouter un lieu - Titre
+    Croix pour annuler - coin haut droite
+    Ajouter votre établissement.
+    Case à cocher - Mon établissement
+    E-mail : - case text E-mail
+Informations sur le lieu
+    Donnez des infos sur ce lieu. S'il est ajouté au site, il sera visible publiquement.
+        text-Nom du lieu (obligatoire)
+        Catégorie (obligatoire)* - défil. horiz. des chips
+        Adresse (obligatoire) - text
+            icone géoloc. pour rentrer automatiquement l'adresse actuelle
+        

@@ -1,0 +1,160 @@
+BASE DE DONNÉES PRÉLIMINAIRE — FERMES THÉRAPEUTIQUES / CARE FARMS EN FRANCE
+Recherche Web — priorité Grand Est
+Date de constitution : 8 octobre 2026
+
+OBJECTIF
+Cette base rassemble une première sélection de fermes thérapeutiques, care farms et structures agricoles utilisant la ferme, les animaux ou la nature dans une démarche thérapeutique, éducative, médico-sociale ou de médiation. Les catégories sont conservées séparément car « ferme thérapeutique » peut recouvrir des modèles différents.
+
+DÉTAILS / CHAMPS DE RECHERCHE RECOMMANDÉS
+Nom
+Type de structure
+Région
+Département
+Commune
+Adresse
+Code postal
+Latitude
+Longitude
+Téléphone
+Email
+Site web
+Publics accueillis
+Médiations / activités
+Professionnels présents
+Accueil individuel
+Accueil en groupe
+Accueil d'institutions
+Accessibilité PMR
+Hébergement
+Tarifs
+Source
+Date de vérification
+Niveau de confiance
+
+PREMIER TABLEAU — GRAND EST
+
+1. Ferme thérapeutique du Centre Hospitalier de Lorquin
+Type : Ferme thérapeutique institutionnelle
+Région : Grand Est
+Département : Moselle (57)
+Commune : Lorquin
+Adresse : 5 rue du Général de Gaulle, 57790 Lorquin
+Téléphone : 03 87 23 14 15
+Publics : patients et résidents du Centre Hospitalier ; notamment personnes accueillies en MAS et EHPAD
+Médiations / activités : médiation animale ; séances individuelles ou groupales sur orientation médicale ; relation homme-animal dans un projet éducatif, social ou thérapeutique
+Source : https://www.ch-lorquin.fr/ferme-therapeutique/
+Remarque : la page officielle indique que la ferme constitue une approche complémentaire aux prises en charge du CHS et qu'elle est aussi accessible aux proches, agents de l'hôpital et bénéficiaires d'EPSOLOR.
+
+2. Ferme des Globe Trotters
+Type : Ferme de médiation animale à visée thérapeutique
+Région : Grand Est
+Département : Aube (10)
+Commune : Géraudot
+Adresse : 21 rue de Piney, 10220 Géraudot
+Téléphone : 06 14 61 10 04
+Coordonnées GPS publiées : 48.3121, 4.32548
+Publics : enfants/adultes et personnes présentant notamment des troubles du comportement, des angoisses ou des peurs ; publics fragilisés
+Médiations / activités : médiation animale individuelle ou collective ; travail de la motricité, relation à l'autre, troubles du comportement, angoisses et peurs ; visites à la ferme ; ânes, boucs nains, chinchillas, lapins, cochons d'Inde, poules et poussins ; activités autour de la nature
+Source : https://www.aube-champagne.com/fr/poi/ferme-des-globe-trotters/
+Remarque : fiche du Parc naturel régional de la Forêt d'Orient / Aube Champagne, mise à jour indiquée au 10/01/2024.
+
+3. GabrasRosa / Ferme du Moulin Jobard
+Type : Ferme avec activité d'équithérapie / ferme thérapeutique
+Région : Grand Est
+Département : Haute-Marne (52)
+Commune : Pierrefaites
+Adresse : Moulin Jobard, 52500 Pierrefaites
+Téléphone : 06 76 20 84 74
+Email : contact@gabrasrosa.com
+Coordonnées GPS : 47.818284, 5.656413
+Publics : notamment personnes accompagnées dans une démarche de thérapie animale ; à préciser selon les prestations actuelles
+Médiations / activités : équithérapie ; animaux de la ferme ; jardin/plantes ; activités liées à la nature
+Source : https://gabrasrosa.com/notre-histoire-2/
+Remarque : le site officiel explique que la ferme a développé une activité d'équithérapie et que certaines chèvres retraitées intègrent le groupe d'animaux utilisés pour la thérapie animale.
+
+4. Ferme de la Couée — Acodège
+Type : Structure socio-éducative avec ferme et médiation équine
+Région : Grand Est
+Département : Haute-Marne (52)
+Commune : Saint-Broingt-les-Fosses
+Adresse : Chemin de Leuchey, 52190 Saint-Broingt-les-Fosses
+Téléphone : 03 25 88 31 03
+Email : ferme.couee@acodege.fr
+Publics : jeunes de 13 à 21 ans confiés à la protection de l'enfance ; accueil d'activités adaptées selon les dispositifs
+Médiations / activités : équicie, équitation adaptée, médiation animale, soins aux animaux, potager, espaces verts
+Source : https://acodege.fr/soutenir-lacodege/centre-equestre-ferme-de-la-couee/
+Remarque : à conserver dans une catégorie distincte des « fermes thérapeutiques » strictes, car il s'agit d'une structure socio-éducative intégrant une ferme.
+
+DEUXIÈME TABLEAU — QUELQUES STRUCTURES EN FRANCE
+
+1. Les Sens de Vivre
+Type : Ferme / structure de médiation et accompagnement
+Région : Hauts-de-France
+Département : Nord (59)
+Commune : Oxelaëre
+Adresse : 9 rue de la Longue Croix, 59670 Oxelaëre
+Publics : enfants, adolescents, adultes, personnes âgées ; personnes en situation de handicap ; troubles psychiques ; difficultés sociales ; addictions ; troubles cognitifs ; structures médico-sociales / EHPAD
+Médiations / activités : zoothérapie, asino-médiation, hortithérapie, jardin et animaux
+Source : https://lessensdevivre.com/accompagnement-individuel/
+Remarque : structure particulièrement pertinente pour un annuaire car les publics et les objectifs d'accompagnement sont détaillés.
+
+2. Ferme thérapeutique Les 3 Sources
+Type : Ferme thérapeutique avec pôle thérapeutique
+Région : Centre-Val de Loire
+Département : Cher (18)
+Commune : Sancoins
+Adresse : Le Plaix, 18600 Sancoins
+Publics : enfants, adolescents, adultes, personnes âgées ; handicaps et pathologies motrices, cognitives, psychiques ou sensorielles
+Médiations / activités : zoothérapie, équithérapie, ergothérapie, jardinage, animaux
+Professionnel identifié : ergothérapeute responsable du pôle thérapeutique
+Source : https://3sources.fr/a-propos/
+Remarque : cas particulièrement intéressant pour le projet car l'ergothérapie est explicitement intégrée au fonctionnement de la ferme.
+
+3. Les Heures Étoilées
+Type : Ferme thérapeutique / séjour de ressourcement
+Région : Normandie
+Département : Calvados (14)
+Commune : Pierrefitte-en-Cinglais
+Adresse : 3031 route de Saint-Christophe, 14690 Pierrefitte-en-Cinglais
+Publics : personnes recherchant un accompagnement thérapeutique individuel et/ou un séjour
+Médiations / activités : médiation animale, nature, jardin, soins aux animaux, activités artistiques, théâtre, hypnose, TCC et autres accompagnements
+Source : https://lafermetherapeutique.fr/
+Remarque : modèle davantage orienté vers le séjour thérapeutique et les thérapies brèves.
+
+4. Ferme Pacifique Camargue
+Type : Ferme thérapeutique / zoothérapie
+Région : Occitanie
+Département : Gard (30)
+Commune : Vauvert / secteur de Montcalm
+Adresse : Mas de la Souteyranne, Montcalm, 30600 Vauvert
+Publics : personnes âgées, enfants/adolescents en difficulté, personnes avec handicap physique ou mental
+Médiations / activités : zoothérapie / médiation animale ; contact, soins et observation des animaux
+Source : https://lafermepacifique.fr/index.php/la-ferme-pacifique/ferme-therapeutique/
+Remarque : ferme thérapeutique indépendante utilisant les animaux dans une démarche de zoothérapie.
+
+5. Ferme d'Humanimaux
+Type : Structure de médiation animale
+Région : Auvergne-Rhône-Alpes
+Département : Rhône (69)
+Commune : Vénissieux
+Adresse : adresse précise à vérifier avant intégration définitive
+Publics : enfants/adolescents en difficulté ou fragiles, personnes handicapées et autres publics fragiles
+Médiations / activités : médiation animale / zoothérapie
+Source : à vérifier avant diffusion comme adresse définitive
+Remarque : entrée à conserver comme piste de recherche et non comme fiche totalement validée.
+
+NOTES MÉTHODOLOGIQUES
+- Les catégories ne sont pas équivalentes : une ferme thérapeutique institutionnelle, une ferme de médiation animale et une structure socio-éducative avec ferme doivent pouvoir être filtrées séparément.
+- Les coordonnées et adresses doivent être revérifiées avant publication définitive de l'annuaire.
+- Pour les structures dont le statut « ferme thérapeutique » est moins explicite, utiliser un niveau de confiance ou un champ « type de structure » plutôt que de les présenter comme des fermes thérapeutiques au sens strict.
+- La base est une première sélection issue de la recherche Web ; elle ne constitue pas encore un recensement exhaustif national.
+
+SOURCES PRINCIPALES UTILISÉES
+Centre Hospitalier de Lorquin : https://www.ch-lorquin.fr/ferme-therapeutique/
+Ferme des Globe Trotters : https://www.aube-champagne.com/fr/poi/ferme-des-globe-trotters/
+GabrasRosa : https://gabrasrosa.com/notre-histoire-2/
+Les Sens de Vivre : https://lessensdevivre.com/accompagnement-individuel/
+Les 3 Sources : https://3sources.fr/a-propos/
+Les Heures Étoilées : https://lafermetherapeutique.fr/
+Ferme Pacifique Camargue : https://lafermepacifique.fr/index.php/la-ferme-pacifique/ferme-therapeutique/
+Ferme de la Couée / Acodège : https://acodege.fr/soutenir-lacodege/centre-equestre-ferme-de-la-couee/

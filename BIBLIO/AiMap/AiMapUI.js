@@ -430,8 +430,8 @@ function renderSearch(){
       ${
         [
           "Tout",
-          "Cafés",
-          "Nature",
+          "Fermes",
+          "Santé",
           "Culture",
           "Favoris",
           "À proximité"

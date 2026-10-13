@@ -1,0 +1,17 @@
+
+/* Alignement du contenu des fieldset du formulaire Utiliser:
+<form id="..." class="formulaire">
+*/
+.formulaire fieldset {
+    text-align: left;
+}
+
+/* Les champs occupent une largeur cohérente */
+.formulaire fieldset input:not([type="checkbox"]),
+.formulaire fieldset select,
+.formulaire fieldset textarea {
+    display: block;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}

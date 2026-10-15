@@ -1,0 +1,28 @@
+Depuis août 2021, GitHub n'accepte plus le mot de passe habituel de ton compte pour effectuer un git push en HTTPS. Il faut utiliser un Personal Access Token (PAT) ou configurer une clé SSH.
+Pour ton dépôt mattmarket-digitals/products, voici la méthode la plus simple : le token GitHub.
+1. Créer un token GitHub avec les bonnes permissions
+À faire dans ton navigateur, connecté à GitHub.
+
+Étape 1 — Ouvre les paramètres des tokens
+GitHub — Personal access tokens
+https://github.com/settings/personal-access-tokens
+
+Étape 2 — Crée un token
+Choisis Fine-grained tokens, puis Generate new token.
+
+Étape 3 — Configure les accès
+Token name : Termux-products
+Expiration : choisis une durée adaptée, par exemple 90 jours.
+Resource owner : mattmarket-digitals, si le dépôt appartient à cette organisation ou à ce compte.
+Repository access : Only select repositories, puis sélectionne products.
+
+Étape 4 — Permissions à choisir
+Dans Repository permissions, règle :
+Contents - Read&Write
+Nécessaire pour envoyer les commits avec git push.
+Metadata - ReadOnly
+Lecture des métadonnées du dépôt, généralement accordée automatiquement.
+Les autres permissions ne sont pas nécessaires pour un push classique.
+
+Étape 5 — Génère et copie le token
+Appuie sur Generate token et copie immédiatement le token affiché. GitHub ne te montrera pas sa valeur complète une seconde fois.

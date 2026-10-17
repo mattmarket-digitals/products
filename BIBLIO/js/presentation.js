@@ -164,7 +164,7 @@ import { lectureAuScroll } from "./lectureAuScroll.js";
             return `
                 <div class="slide">
                     <img
-                        src="${cheminImages}page-${numero}.png"
+                        src="${cheminImages}page-${numero}~2.jpg"
                         alt="Diapositive ${index + 1} sur ${nombreSlides}"
                         ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}
                         draggable="false"
@@ -424,6 +424,56 @@ commandes.addEventListener("click", (event) => {
                 ? "Quitter le plein écran"
                 : "Plein écran";
     }
+    
+
+/*
+boutonPleinEcran.addEventListener("click", async () => {
+    if (document.fullscreenElement === presentation) {
+        try {
+            await document.exitFullscreen();
+        } catch (erreur) {
+            console.error("Erreur en quittant le plein écran :", erreur);
+        }
+        return;
+    }
+
+    if (document.fullscreenElement) {
+        console.warn("Un autre élément est déjà en plein écran.");
+        return;
+    }
+
+    if (typeof presentation.requestFullscreen !== "function") {
+        console.warn("Le plein écran n'est pas pris en charge.");
+        return;
+    }
+
+    utilisateurEnModePortrait =
+        window.matchMedia("(orientation: portrait)").matches;
+
+    try {
+        await presentation.requestFullscreen();
+    } catch (erreur) {
+        console.warn(
+            "Plein écran indisponible dans cet environnement :",
+            erreur.message
+        );
+        return;
+    }
+
+    if (screen.orientation?.lock) {
+        try {
+            await screen.orientation.lock("landscape");
+            orientationVerrouilleeParPresentation = true;
+        } catch (erreur) {
+            console.warn(
+                "Verrouillage paysage indisponible :",
+                erreur.message
+            );
+        }
+    }
+});
+*/
+    
 
 boutonPleinEcran.addEventListener("click", async () => {
     try {
@@ -511,12 +561,30 @@ boutonPleinEcran.addEventListener("click", async () => {
 
         const deltaX = finX - debutTouchX;
         const deltaY = finY - debutTouchY;
-
+/*
         // Réagir uniquement à un vrai glissement horizontal.
         if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) {
             return;
         }
 
+        if (deltaX < 0 && indexActuel < nombreSlides - 1) {
+            afficherSlide(indexActuel + 1);
+        } else if (deltaX > 0 && indexActuel > 0) {
+            afficherSlide(indexActuel - 1);
+        }
+    }, { passive: true });
+*/
+// Ignorer les gestes trop courts ou principalement verticaux.
+        if (
+            Math.abs(deltaX) < 50 ||
+            Math.abs(deltaX) < Math.abs(deltaY)
+        ) {
+            return;
+        }
+    
+        // Un glissement horizontal manuel arrête la lecture automatique.
+        arreterLecture();
+    
         if (deltaX < 0 && indexActuel < nombreSlides - 1) {
             afficherSlide(indexActuel + 1);
         } else if (deltaX > 0 && indexActuel > 0) {

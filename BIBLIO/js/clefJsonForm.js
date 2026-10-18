@@ -7,7 +7,27 @@
  * @param {HTMLFormElement} formulaire
  * @returns {Object} Réponses du formulaire
  */
-
+// Comportement email
+const formulaire = document.getElementById("formulaireFerme");
+const champEmailPublic = formulaire.querySelector("#emailPublic");
+const choixConfidentialite = formulaire.querySelectorAll(
+    'input[name="emailConfidentialite"]'
+);
+function actualiserEmailPublic() {
+    const choix = formulaire.querySelector(
+        'input[name="emailConfidentialite"]:checked'
+    );
+    const identifiantPublic = choix?.value === "public";
+    champEmailPublic.disabled = identifiantPublic;
+    if (identifiantPublic) {
+        champEmailPublic.value = "";
+    }
+}
+choixConfidentialite.forEach((choix) => {
+    choix.addEventListener("change", actualiserEmailPublic);
+});
+actualiserEmailPublic();
+//////////////////
 function clefJsonForm(formulaire) {
     if (!(formulaire instanceof HTMLFormElement)) {
         throw new TypeError(

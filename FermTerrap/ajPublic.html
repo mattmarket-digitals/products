@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1">
+-->          <!-- , user-scalable=no -->
+    <script src="../BIBLIO/js/noZoom.js"></script>
+    <title>FermTerrap</title>
+
+    <link rel="stylesheet" href="../BIBLIO/css/pageResponsive.css"> <!-- pageSimple -->
+    <link rel="stylesheet" href="../BIBLIO/css/themes/themeFT.css">
+
+    <style>
+        :root{
+        }
+    </style>
+    
+</head>
+
+<body>
+<main>
+    <img src="images/LogoFT.png" alt="Logo FermTerrap">
+    <br><br>
+    <h1>
+        <strong><u>FERMTERRAP</u></strong>
+        <br>Votre ferme thérapeutique
+    </h1>
+    <br>
+    <script src="../BIBLIO/js/precedentMenu.js"></script>
+    <script>
+        console.log(history);
+/*
+        const precedent = document.referrer
+            ? `<li><a href="${document.referrer}">&lt; Précédent</a></li>`
+            : `<li><a href="FermTerrap.html">&lt; Accueil</a></li>`;
+*/
+        const contenuMenu = `
+            <nav aria-label="Navigation principale">
+            <ul>
+                ${precedent}
+<!--              <li><a href="adminboard.html">Gérer le site</a></li> -->
+            </ul>
+            </nav>
+        `;
+    </script>
+    <script src="../BIBLIO/js/cadreLabel.js"></script>
+    <script src="../BIBLIO/js/affDimScreen.js"></script>
+    <br>
+    <h2><u>Intéressé(e), famille, aidant.</u></h2>
+    <br>
+    <h3>Renseignez vos infos.</h3>
+
+<script src="../BIBLIO/js/FT/ajPublicForm.js"></script>
+
+</main>
+<!-- Bibliothèque Supabase -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Création du client Supabase -->
+
+<script src="../BIBLIO/js/supabaseClientFT.js"></script>
+<!--
+<script src="../BIBLIO/js/clefJsonForm.js"></script>
+
+<script src="../BIBLIO/js/clefJsonSave.js"></script>
+-->
+</body>
+</html>

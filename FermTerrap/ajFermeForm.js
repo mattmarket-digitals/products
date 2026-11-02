@@ -1,5 +1,6 @@
 /*avec <div id="cadreLabel">
 */
+//alert("ok");
 
 document.currentScript.insertAdjacentHTML("afterend", `
 <form id="formulaireFerme" class="formulaire">

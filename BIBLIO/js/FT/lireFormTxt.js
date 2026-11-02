@@ -2,7 +2,8 @@
 "use strict";
 
 // QUESTIONS ET RUBRIQUES DU FORMULAIRE
-import { rubriques } from "./FermeRubriqMain.js";
+//import { rubriques } from "./FermeRubriqMain.js";
+import { rubriques } from "./FermeRubriqDyn.js";
 
 // ==========================================================
 // LECTURE TEXTUELLE DES FORMULAIRES FERMETERRAP

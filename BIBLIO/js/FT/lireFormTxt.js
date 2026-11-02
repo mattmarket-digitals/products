@@ -1,4 +1,4 @@
-
+//alert("ok");
 "use strict";
 
 // ==========================================================
@@ -61,6 +61,9 @@ async function lireFormTxt() {
         // QUESTIONS ET RUBRIQUES DU FORMULAIRE
         // L'ordre suit ajFermeForm.js.
         // --------------------------------------------------
+
+//const formulaire = document.getElementById("formulaireFerme");
+//const rubriques = window.construireRubriques(formulaire);
 
         const rubriques = [
             {
@@ -131,6 +134,7 @@ async function lireFormTxt() {
                 ]
             }
         ];
+
 
         // --------------------------------------------------
         // OUTILS DE FORMATAGE

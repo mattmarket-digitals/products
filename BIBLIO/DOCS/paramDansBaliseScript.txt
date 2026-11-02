@@ -1,0 +1,21 @@
+Peut-on transmettre des paramètres dans une balise <script src="..."> ?
+Oui ! Il existe plusieurs possibilités.
+Solution A — Utiliser des attributs data-* (recommandée)
+HTML :
+
+<script
+    src="../BIBLIO/js/FormToJson.js"
+    data-form="formulaireId"
+    data-output="resultatFormulaire"
+    data-title="Réponses du formulaire"
+></script>
+
+Dans FormToJson.js :
+
+"use strict";
+
+const scriptCourant = document.currentScript;
+
+const formName = scriptCourant.dataset.form;
+const outputId = scriptCourant.dataset.output;
+const outputTitle = scriptCourant.dataset.title;

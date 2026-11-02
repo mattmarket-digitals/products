@@ -1,6 +1,9 @@
 //alert("ok");
 "use strict";
 
+// QUESTIONS ET RUBRIQUES DU FORMULAIRE
+import { rubriques } from "./FermeRubriqMain.js";
+
 // ==========================================================
 // LECTURE TEXTUELLE DES FORMULAIRES FERMETERRAP
 // Affichage compact de toutes les fermes enregistrées
@@ -64,7 +67,7 @@ async function lireFormTxt() {
 
 //const formulaire = document.getElementById("formulaireFerme");
 //const rubriques = window.construireRubriques(formulaire);
-
+/*
         const rubriques = [
             {
                 titre: "Identifiant et confidentialité",
@@ -134,7 +137,7 @@ async function lireFormTxt() {
                 ]
             }
         ];
-
+*/
 
         // --------------------------------------------------
         // OUTILS DE FORMATAGE

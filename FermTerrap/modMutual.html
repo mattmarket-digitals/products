@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script src="../BIBLIO/js/noZoom.js"></script>
+
+    <title>FermTerrap - Modifier mes informations</title>
+
+    <link rel="stylesheet" href="../BIBLIO/css/pageResponsive.css">
+    <link rel="stylesheet" href="../BIBLIO/css/themes/themeFT.css">
+
+    <style>
+        #zoneFormulaire[hidden] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<main>
+
+    <img src="images/LogoFT.png" alt="Logo FermTerrap">
+
+    <br><br>
+
+    <h1>
+        <strong><u>FERMTERRAP</u></strong>
+        <br>Votre ferme thérapeutique
+    </h1>
+
+    <br>
+
+    <script src="../BIBLIO/js/precedentMenu.js"></script>
+
+    <script>
+        const contenuMenu = `
+            <nav aria-label="Navigation principale">
+                <ul>
+                    ${precedent}
+                </ul>
+            </nav>
+        `;
+    </script>
+
+    <script src="../BIBLIO/js/cadreLabel.js"></script>
+    <script src="../BIBLIO/js/affDimScreen.js"></script>
+
+    <br>
+
+    <h2><u>Modifier mes informations</u></h2>
+
+    <br>
+
+    <section id="rechercheMutual">
+
+        <h3>Rechercher les informations à modifier</h3>
+
+        <label for="emailRecherche">Adresse e-mail :</label>
+
+        <input
+            id="emailRecherche"
+            type="email"
+            autocomplete="email"
+            required
+        >
+
+        <button type="button" id="boutonRechercher">
+            Rechercher
+        </button>
+
+        <p
+            id="messageModification"
+            role="status"
+            aria-live="polite"
+        ></p>
+
+    </section>
+
+
+    <section id="zoneFormulaire" hidden>
+
+        <h3>Modifiez vos informations</h3>
+
+        <div id="contenuFormulaire"></div>
+
+    </section>
+
+</main>
+
+
+<!-- Bibliothèque Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Création du client Supabase -->
+<script src="../BIBLIO/js/supabaseClientFT.js"></script>
+
+<!-- Préparation des données du formulaire
+<script src="../BIBLIO/js/clefJsonForm.js"></script>
+ -->
+<!-- Recherche et chargement du formulaire adapté -->
+<script src="../BIBLIO/js/FT/cherchAjForm.js"></script>
+
+<!-- Remplissage et modification -->
+<script src="../BIBLIO/js/FT/modMutual.js"></script>
+
+</body>
+</html>

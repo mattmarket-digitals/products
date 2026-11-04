@@ -1,4 +1,4 @@
-
+console.log("clefJsonForm.js chargé");
 "use strict";
 
 /**

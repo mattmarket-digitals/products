@@ -1,14 +1,42 @@
 //alert("ok");
+
 "use strict";
 
 // QUESTIONS ET RUBRIQUES DU FORMULAIRE
 //import { rubriques } from "./FermeRubriqMain.js";
-import { rubriques } from "./FermeRubriqDyn.js";
-
+//import { rubriques } from "./FermeRubriqDyn.js";
+import { rubriques } from "./MutualRubriqDyn.js";
 // ==========================================================
 // LECTURE TEXTUELLE DES FORMULAIRES FERMETERRAP
 // Affichage compact de toutes les fermes enregistrées
 // ==========================================================
+
+console.log("========== LECTURE FORMULAIRE ==========");
+console.log("[lireFormTxt] Page actuelle :", window.location.pathname);
+console.log("[lireFormTxt] Rubriques importées :", rubriques);
+console.log("[lireFormTxt] Nombre de rubriques :", rubriques.length);
+
+const pageActuelle = window.location.pathname;
+
+let nomTable;
+let nomAffichage;
+
+if (pageActuelle.endsWith("lireFermeInfo.html")) {
+
+    nomTable = "FermeInfo";
+    nomAffichage = "ferme";
+
+} else if (pageActuelle.endsWith("lireSanteInfo.html")) {
+
+    nomTable = "SanteInfo";
+    nomAffichage = "santé";
+
+} else {
+
+    throw new Error("Page non reconnue : " + pageActuelle);
+}
+
+console.log("[lireFormTxt] Table sélectionnée :", nomTable);
 
 async function lireFormTxt() {
     const main = document.querySelector("main");
@@ -26,10 +54,10 @@ async function lireFormTxt() {
     zone.id = "listeFormTxt";
 
     const titre = document.createElement("h2");
-    titre.textContent = "Liste des fermes enregistrées";
+    titre.textContent = `Liste des informations ${nomAffichage} enregistrées`;
 
     const statut = document.createElement("p");
-    statut.textContent = "Chargement des données…";
+    //statut.textContent =`${data.length} enregistrement(s) ${nomAffichage} reçu(s).`;
 
     zone.append(titre, statut);
     main.appendChild(zone);
@@ -39,12 +67,15 @@ async function lireFormTxt() {
             "Erreur : le client Supabase n'est pas initialisé.";
         return;
     }
-
+//console.log("[lireFormTxt] Table Supabase demandée : FermeInfo");
     try {
         const { data, error } = await window.clientSupabase
-            .from("FermeInfo")
+            .from(nomTable)
             .select("id, created_at, userMail, repJson")
             .order("created_at", { ascending: false });
+
+console.log("[lireFormTxt] Table interrogée :", nomTable);
+console.log("[lireFormTxt] Données reçues :", data);
 
         if (error) {
             console.error("Erreur Supabase :", error);
@@ -58,8 +89,16 @@ async function lireFormTxt() {
             return;
         }
 
-        statut.textContent =
-            `${data.length} ferme(s) enregistrée(s).`;
+        statut.textContent = `${data.length} enregistrement(s) ${nomAffichage} reçu(s).`;
+
+console.log("[lireFormTxt] Résultat Supabase :", data);
+console.log("[lireFormTxt] Erreur Supabase :", error);
+
+if (data && data.length > 0) {
+    console.log("[lireFormTxt] Clés du premier repJson :",
+        Object.keys(data[0].repJson || {})
+    );
+}
 
         // --------------------------------------------------
         // QUESTIONS ET RUBRIQUES DU FORMULAIRE
@@ -178,8 +217,7 @@ async function lireFormTxt() {
             const reponses = ferme.repJson ?? {};
 
             const fiche = document.createElement("article");
-            fiche.className = "fiche-ferme-texte";
-
+            fiche.className = "fiche-" + nomAffichage + "-texte";
             // Présentation compacte, sans dépendre d'une feuille CSS.
             fiche.style.margin = "1rem 0";
             fiche.style.padding = "0.8rem 1rem";

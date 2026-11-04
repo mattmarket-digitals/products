@@ -20,7 +20,7 @@ const configurationFormulaires = {
     formulaireSante: {
         table: "SanteInfo",
         message: "messageFormulaireSante",
-        redirection: null
+        redirection: "lireSanteInfo.html"
     },
 
     formulairePublic: {

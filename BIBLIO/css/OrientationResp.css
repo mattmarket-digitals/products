@@ -1,6 +1,6 @@
 @media (orientation: portrait) {
     :root {
-        --padd_sup: 50px;
+        --padd_sup: 100px;
         --padd_lat: 50px;
         --univ_width: 400px;
         --univ_height: auto;

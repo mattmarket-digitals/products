@@ -1,24 +1,26 @@
 //SupPanel.js
 /*######  Derniere intregration  #######
 <!-- ######## Panneau params ##########-->
-<script
+               <!--                 ###-->
+<script                                
     src="../BIBLIO/js/supPanel.js"
     data-params='{
         "height": "70px",
         "borderColor": "green", 
         "shadowColor": "green",
-        "leftIconJs": "../BIBLIO/icones/icFlecheG.js",
+        "leftIconJs": "../BIBLIO/icones/icAcc.js",
         "icFlecheDim": "50px",
         "rightIconJs": "../BIBLIO/icones/icMenu.js",
         "icMenuDim": "50px"
     }'>
 </script>
-<!--
-// ces 2 color en variable commune?
+<!--                                ##
+// ces 2 color en variable commune?##
 //##################################
 <script src="../BIBLIO/icones/icMenu.js"></script>
 -->    
 #########################################*/
+console.log("supPanel.js chargé");
 "use strict";
 
 (() => {

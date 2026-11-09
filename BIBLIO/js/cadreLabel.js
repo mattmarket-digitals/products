@@ -1,3 +1,4 @@
+console.log("cadreLabel.js chargé.");
 /*avec <div id="cadreLabel">
 document.querySelector("#cadreLabel").insertAdjacentHTML("beforeend",*/
 document.currentScript.insertAdjacentHTML("afterend", `

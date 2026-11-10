@@ -1,9 +1,9 @@
-// intégration:  <script src="../BIBLIO/js/FT/supPanelFTparam.js"></script>
+// intégration:  <script src="../BIBLIO/js/FT/supPanelFT.js"></script>
 
 
 "use strict";
 
-console.log("supPanelFTparam.js chargé");
+console.log("supPanelFT.js chargé");
 
 // Détermination de l'icône gauche
 const aUnPrecedent = Boolean(document.referrer);
@@ -12,11 +12,13 @@ const iconeGauche = aUnPrecedent
     ? "../BIBLIO/icones/icPrec.js"
     : "../BIBLIO/icones/icAcc.js";
 
-// Paramètres du panneau
+// Paramètres du panneau supérieur
 const paramsSupPanelFT = {
     height: "60px",
     borderColor: "green",
     shadowColor: "green",
+
+    homePage: "FermTerrap.html",
 
     leftIconJs: iconeGauche,
     icFlecheDim: "50px",
@@ -25,54 +27,142 @@ const paramsSupPanelFT = {
     icMenuDim: "50px"
 };
 
-// Création de la balise script
+// Création du script du panneau
 const scriptSupPanel = document.createElement("script");
 
 scriptSupPanel.src = "../BIBLIO/js/supPanel.js";
 scriptSupPanel.dataset.params = JSON.stringify(paramsSupPanelFT);
 
-// Après chargement du panneau, ajout du comportement Précédent
+// Page d'accueil du site
+//const pageAccueil = params.homePage || "FermTerrap.html";
+
+// Après chargement du panneau
 scriptSupPanel.onload = () => {
 
-    if (!aUnPrecedent) return;
+    // --- Icône gauche : Précédent ---
 
-    const emplacementGauche =
-        document.getElementById("supPanelGauche");
+    if (aUnPrecedent) {
 
-    if (!emplacementGauche) {
-        console.error("Emplacement de l'icône gauche introuvable.");
+        const emplacementGauche =
+            document.getElementById("supPanelGauche");
+
+        if (emplacementGauche) {
+
+            const observerGauche = new MutationObserver(() => {
+                const icone = emplacementGauche.querySelector("img");
+
+                if (!icone) return;
+
+                observerGauche.disconnect();
+
+                icone.style.cursor = "pointer";
+
+                icone.addEventListener("click", () => {
+                    history.back();
+                });
+            });
+
+            observerGauche.observe(emplacementGauche, {
+                childList: true,
+                subtree: true
+            });
+        }
+    }
+
+    // --- Icône droite : ouverture du menu ---
+
+    const emplacementDroite =
+        document.getElementById("supPanelDroite");
+
+    if (!emplacementDroite) {
+        console.error("Emplacement de l'icône droite introuvable.");
         return;
     }
 
-    // Attendre que l'image soit insérée par icPrec.js
-    const observer = new MutationObserver(() => {
+    const observerDroite = new MutationObserver(() => {
 
-        const icone = emplacementGauche.querySelector("img");
+        const icone = emplacementDroite.querySelector("img");
 
         if (!icone) return;
 
-        observer.disconnect();
+        observerDroite.disconnect();
 
         icone.style.cursor = "pointer";
 
-        icone.addEventListener("click", () => {
-            history.back();
-        });
+        icone.addEventListener("click", ouvrirFermerMenu);
     });
 
-    observer.observe(emplacementGauche, {
+    observerDroite.observe(emplacementDroite, {
         childList: true,
         subtree: true
     });
 };
 
-// Insertion et exécution
+// Insertion et exécution du script du panneau
 document.currentScript.insertAdjacentElement(
     "afterend",
     scriptSupPanel
 );
 
 
+// =====================================
+// Gestion du menu déroulant
+// =====================================
+
+function ouvrirFermerMenu() {
+
+    // Si le menu existe déjà, on le ferme
+    const menuExistant = document.getElementById("cadreLabel");
+
+    if (menuExistant) {
+        menuExistant.remove();
+        return;
+    }
+
+    // Création du conteneur du menu
+    const cadre = document.createElement("div");
+
+    cadre.id = "cadreLabel";
+
+    cadre.style.position = "fixed";
+    cadre.style.top = "60px";
+    cadre.style.right = "0";
+    cadre.style.zIndex = "999";
+
+    cadre.style.background = "black";
+    cadre.style.color = "white";
+    cadre.style.padding = "10px";
+    cadre.style.minWidth = "220px";
+
+    cadre.style.border = "1px solid green";
+    cadre.style.boxShadow = "0 3px 8px green";
+
+    document.body.appendChild(cadre);
+
+    // Chargement de cadreLabel.js dans le conteneur
+    const scriptMenu = document.createElement("script");
+
+    scriptMenu.src = "../BIBLIO/js/cadreLabel.js";
+
+    cadre.appendChild(scriptMenu);
+}
+
+/*function chargerIcone(chemin, emplacement, nom) {
+    if (!chemin) return;
+
+    const scriptIcone = document.createElement("script");
+    scriptIcone.src = chemin;
+    scriptIcone.dataset.homePage = pageAccueil;
+
+    scriptIcone.onerror = () => {
+        console.error(
+            `supPanel.js : impossible de charger ${nom} : ${chemin}`
+        );
+        scriptIcone.remove();
+    };
+
+    emplacement.appendChild(scriptIcone);
+}*/
 
 /*
 document.currentScript.insertAdjacentHTML("afterend", `

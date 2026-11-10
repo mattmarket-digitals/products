@@ -75,22 +75,30 @@
     <br>
     <p>Site en construction et actuellement optimisé pour mobile sur Chrome Android.</p>
     <br>
-    <script>
+    <script> //est censé se trouver avant supPanelFT.js
         console.log(history);
-        const contenuMenu = `
+      //  const contenuMenu = `
+        window.contenuMenu = `
             <nav aria-label="Navigation principale">
             <ul>
                 <li><a href="carte.html">Carte (à  cacher)</a></li>
+                <br>
                 <li><a href="lireFermeInfo.html">Liste des fermes</a></li>
+                <br>
                 <li><a href="lireSanteInfo.html">Liste des représentants Santé</a></li>
+                <br>
                 <li><a href="modMutual.html">Modifier vos informations</a></li> 
+                <br>
                 <li><a href="fichAct.html">Fiches d'activités</a></li>
+                <br>
                 <li><a href="login.html"><em>Votre compte <strong>(Log In)</strong></em></a></li>
             </ul>
             </nav>
         `;
     </script>
+<!--
     <script src="../BIBLIO/js/cadreLabel.js"></script>
+-->
     <script src="../BIBLIO/js/affDimScreen.js"></script>
     <br>
     <h2><u>Présentation</u></h2>

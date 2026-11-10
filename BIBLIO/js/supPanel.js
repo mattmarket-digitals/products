@@ -41,6 +41,9 @@ console.log("supPanel.js chargé");
         return;
     }
 
+    // Page d'accueil du site
+    const pageAccueil = params.homePage || "FermTerrap.html";
+
     // Dimensions et couleurs
     const hauteur = params.height || "70px";
     const couleurBord = params.borderColor || "green";
@@ -111,20 +114,21 @@ console.log("supPanel.js chargé");
 
     // Chargement d'une icône dans son emplacement réservé
     function chargerIcone(chemin, emplacement, nom) {
-        if (!chemin) return;
+    if (!chemin) return;
 
-        const scriptIcone = document.createElement("script");
-        scriptIcone.src = chemin;
+    const scriptIcone = document.createElement("script");
+    scriptIcone.src = chemin;
+    scriptIcone.dataset.homePage = pageAccueil;
 
-        scriptIcone.onerror = () => {
-            console.error(
-                `supPanel.js : impossible de charger ${nom} : ${chemin}`
-            );
-            scriptIcone.remove();
-        };
+    scriptIcone.onerror = () => {
+        console.error(
+            `supPanel.js : impossible de charger ${nom} : ${chemin}`
+        );
+        scriptIcone.remove();
+    };
 
-        emplacement.appendChild(scriptIcone);
-    }
+    emplacement.appendChild(scriptIcone);
+}
 
     chargerIcone(
         params.leftIconJs,

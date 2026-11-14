@@ -1,6 +1,6 @@
 /*avec <div id="cadreLabel">
 */
-//alert("ok");
+console.log("ajFermeForm.js chargé.");
 
 document.currentScript.insertAdjacentHTML("afterend", `
 <form id="formulaireFerme" class="formulaire">

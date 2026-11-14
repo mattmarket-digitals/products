@@ -14,12 +14,111 @@
     <style>
         :root{
         }
+        /* Zone du formulaire masquée au démarrage */
+#zoneFormulaire {
+    display: none;
+}
+
+/* Formulaire visible lorsque la zone est ouverte */
+#zoneFormulaire #formulaireFerme {
+    display: block;
+}
+
+/* Phrase située après le formulaire */
+#phraseFinale {
+    margin: 25px 10px;
+    text-align: center;
+}
     </style>
     
 </head>
 
 <body>
+
 <main>
+    <!-- Panneau supérieur -->
+    <script src="../BIBLIO/js/FT/supPanelFT.js"></script>
+
+    <!-- ================= ZONE D'ACCUEIL ================= -->
+    <section id="accueilFormulaire">
+
+        <img src="images/LogoFT.png" alt="Logo FermTerrap">
+        <br><br>
+
+        <h1>
+            <strong><u>FERMTERRAP</u></strong>
+            <br>Votre ferme thérapeutique
+        </h1>
+
+        <br>
+
+        <script>
+            window.contenuMenu = null;
+            console.log("window.contenuMenu =", window.contenuMenu);
+        </script>
+
+        <script src="../BIBLIO/js/affDimScreen.js"></script>
+
+        <br>
+
+        <h2><u>Votre Ferme</u></h2>
+        <br>
+
+        <h3>Renseignez vos infos.</h3>
+        <br>
+
+        <button type="button" id="boutonCommencer">
+            Commencez le formulaire
+        </button>
+
+    </section>
+
+    <!-- ================= ZONE DU FORMULAIRE ================= -->
+    <section id="zoneFormulaire">
+
+        <script src="ajFermeForm.js"></script>
+
+        <!-- Phrase affichée avec le formulaire -->
+        <p id="phraseFinale">
+            Merci de prendre le temps de renseigner ces informations.
+            Votre contribution aidera à faire connaître votre ferme.
+        </p>
+
+<script
+    src="../BIBLIO/js/infPanel.js"
+    data-params='{
+        "height": "70px",
+        "borderColor": "green",
+        "shadowColor": "green",
+        "textColor": "white",
+        "fontSize": "30px"
+    }'>
+</script>
+
+<!--
+<script
+    src="../BIBLIO/js/infPanel.js"
+    data-params='{
+        "height": "70px",
+        "borderColor": "green",
+        "shadowColor": "green",
+        "leftIconJs": "../BIBLIO/icones/icPrec.js",
+        "icFlecheDim": "50px",
+        "rightIconJs": "../BIBLIO/icones/icMenu.js",
+        "icMenuDim": "50px"
+    }'>
+</script>
+-->
+    </section>
+
+    <!-- Script qui gère le passage de l'accueil au formulaire -->
+    <script src="demarrerFormulaire.js"></script>
+
+</main>
+
+
+<!--   <main>  -->
+<!--    
     <script src="../BIBLIO/js/FT/supPanelFT.js"></script>
     
     <img src="images/LogoFT.png" alt="Logo FermTerrap">
@@ -29,43 +128,46 @@
         <br>Votre ferme thérapeutique
     </h1>
     <br>
-<!--
+-->    
+                        <!--
     <script src="../BIBLIO/js/precedentMenu.js"></script>
--->
+                    -->
     <script>
-        console.log(history);
-/*
+//        console.log(history);
+                /*
         const precedent = document.referrer
             ? `<li><a href="${document.referrer}">&lt; Précédent</a></li>`
             : `<li><a href="FermTerrap.html">&lt; Accueil</a></li>`;
-*/
-      //  const contenuMenu = `
-        window.contenuMenu = null;
-        console.log ("window.contenuMenu = ",window.contenuMenu);
-        /*
+                    */
+                  //  const contenuMenu = `
+//        window.contenuMenu = null;
+//        console.log ("window.contenuMenu = ",window.contenuMenu);
+                    /*
         `
             <nav aria-label="Navigation principale">
             <ul>
                 
-<!--              <li><a href="adminboard.html">Gérer le site</a></li> -->
+        <!--              <li><a href="adminboard.html">Gérer le site</a></li> -->
             </ul>
             </nav>
         `;
         //${precedent}
-        */
+                    */
     </script>
 <!--    
     <script src="../BIBLIO/js/cadreLabel.js"></script>
 -->
+<!--
     <script src="../BIBLIO/js/affDimScreen.js"></script>
     <br>
     <h2><u>Votre Ferme</u></h2>
     <br>
     <h3>Renseignez vos infos.</h3>
-
+    <br>
+    <button>Commencez le formulaire</button>
 <script src="ajFermeForm.js"></script>
-
 </main>
+-->
 <!-- Bibliothèque Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <!-- Création du client Supabase -->

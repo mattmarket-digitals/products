@@ -4,69 +4,7 @@
 
 document.currentScript.insertAdjacentHTML("afterend", `
 <form id="formulaireFerme" class="formulaire">
-   
-        <fieldset>
-            <legend> Identifiant et confidentialité</legend>
-            
-            <div class="champ">
-                <label for="email">E-mail (identifiant) * :</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    autocomplete="email"
-                    required
-                >
-            </div>
-            
-            <label>
-                <input
-                    type="radio"
-                    name="emailConfidentialite"
-                    value="prive"
-                    checked
-                >
-                Privé
-            </label>
-            
-            <label>
-                <input
-                    type="radio"
-                    name="emailConfidentialite"
-                    value="public"
-                >
-                Public
-            </label>
-        </fieldset>
-
-            <fieldset>
-                <legend>1. Coordonnées</legend>
-            
-                <div class="champ">
-                    <label for="emailPublic">E-mail public :</label>
-                    <input
-                        type="email"
-                        id="emailPublic"
-                        name="emailPublic"
-                        autocomplete="off"
-                    >
-                </div>
-
-                <label for="telephone">Téléphone</label>
-                <input id="telephone" name="telephone" type="tel"
-                       autocomplete="tel">
-        <!--
-                <br>
-                <label for="email">Adresse e-mail *</label>
-                <input id="email" name="email" type="email" required
-                       autocomplete="email">
-        -->
-                <br>
-                <label for="site_web">Site web</label>
-                <input id="site_web" name="site_web" type="url"
-                       placeholder="https://...">
-            </fieldset>
-
+  
     <fieldset>
         <legend>2. Profil et localisation</legend>
 
@@ -281,6 +219,69 @@ document.currentScript.insertAdjacentHTML("afterend", `
                placeholder="https://...">
         <p>La date de vérification et le niveau de confiance seront renseignés par FermTerrap après contrôle.</p>
     </fieldset>
+
+        <fieldset>
+            <legend> Identifiant et confidentialité</legend>
+            
+            <div class="champ">
+                <label for="email">E-mail (identifiant) * :</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+            
+            <label>
+                <input
+                    type="radio"
+                    name="emailConfidentialite"
+                    value="prive"
+                    checked
+                >
+                Privé
+            </label>
+            
+            <label>
+                <input
+                    type="radio"
+                    name="emailConfidentialite"
+                    value="public"
+                >
+                Public
+            </label>
+        </fieldset>
+
+            <fieldset>
+                <legend>1. Coordonnées</legend>
+            
+                <div class="champ">
+                    <label for="emailPublic">E-mail public :</label>
+                    <input
+                        type="email"
+                        id="emailPublic"
+                        name="emailPublic"
+                        autocomplete="off"
+                    >
+                </div>
+
+                <label for="telephone">Téléphone</label>
+                <input id="telephone" name="telephone" type="tel"
+                       autocomplete="tel">
+        <!--
+                <br>
+                <label for="email">Adresse e-mail *</label>
+                <input id="email" name="email" type="email" required
+                       autocomplete="email">
+        -->
+                <br>
+                <label for="site_web">Site web</label>
+                <input id="site_web" name="site_web" type="url"
+                       placeholder="https://...">
+            </fieldset>
+
 
 <div id="messageFormulaire"
      class="statut-formulaire statut-attente"

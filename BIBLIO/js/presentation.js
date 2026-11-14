@@ -7,6 +7,7 @@
     // ---------- IMPORTATION ----------
 
 import { lectureAuScroll } from "./lectureAuScroll.js";
+import { chargerCommandesFT } from "./FT/command8btnFT.js";
 
 (() => {
     "use strict";
@@ -137,6 +138,13 @@ import { lectureAuScroll } from "./lectureAuScroll.js";
             flex: 0 0 auto;
             padding: 8px 4px;
             background: #111;
+            max-height: 65px;
+        }
+        #presentation:fullscreen .commandes button {
+            max-height: 60px;
+        }
+        #presentation:fullscreen .numero-slide {
+            max-height: 60px;
         }
 
         @media (orientation: landscape) {
@@ -218,7 +226,7 @@ import { lectureAuScroll } from "./lectureAuScroll.js";
                     data-action="pause"
                     aria-label="Mettre la présentation en pause"
                     title="Pause"
-                >⏸</button>
+                >| |</button>
 
                 <button
                     type="button"
@@ -272,7 +280,28 @@ if (!scriptCourant || !scriptCourant.parentNode) {
 }
 
 scriptCourant.insertAdjacentHTML("afterend", htmlPresentation);
+// ============insertion 8 commandes========
+chargerCommandesFT();
+/* ---------- CHARGEMENT DE command8btn.js ----------
+const scriptCommand8btn = document.createElement("script");
 
+scriptCommand8btn.src = new URL(
+    "./command8btn.js",
+    import.meta.url
+).href;
+
+scriptCommand8btn.dataset.params = JSON.stringify({
+    command8btnJson: {
+        menuAlt: "Afficher ou masquer les commandes",
+        menuWidth: "50px",
+        menuHeight: "50px"
+    }
+});
+document.head.appendChild(scriptCommand8btn);
+//----------_----*/
+
+
+//========================================
     // ---------- RÉCUPÉRATION DES ÉLÉMENTS ----------
 
     const presentation = scriptCourant.nextElementSibling;

@@ -2,18 +2,56 @@
 <script src="../BIBLIO/icones/icMenu.js"></script>
 */
 
+/*
+console.log("icMenu.js chargé");
+
+// Récupération du script qui exécute ce fichier
+const scriptCourant = document.currentScript;
+
+// Détection du mode présentation
+const modePresentation =
+    scriptCourant?.dataset.mode === "presentation";
+
+console.log("Mode présentation :", modePresentation);
+console.log("Script icMenu :", scriptCourant);
+
+// Vérification de la disponibilité du menu général
+const menuDisponible =
+    modePresentation ||
+    (
+        window.contenuMenu !== null &&
+        window.contenuMenu !== undefined &&
+        String(window.contenuMenu).trim() !== ""
+    );   
+    
+scriptCourant.insertAdjacentHTML("afterend", `  */
 
 "use strict";
 
-console.log("icMenu.js chargé");
+(() => {
 
-// Vérification de la disponibilité du menu
-const menuDisponible =
-    window.contenuMenu !== null &&
-    window.contenuMenu !== undefined &&
-    String(window.contenuMenu).trim() !== "";
+    console.log("icMenu.js chargé");
 
-document.currentScript.insertAdjacentHTML("afterend", `
+    // Récupération du script qui exécute ce fichier
+    const scriptCourant = document.currentScript;
+
+    // Détection du mode présentation
+    const modePresentation =
+        scriptCourant?.dataset.mode === "presentation";
+
+    console.log("Mode présentation :", modePresentation);
+    console.log("Script icMenu :", scriptCourant);
+
+    // Vérification de la disponibilité du menu général
+    const menuDisponible =
+        modePresentation ||
+        (
+            window.contenuMenu !== null &&
+            window.contenuMenu !== undefined &&
+            String(window.contenuMenu).trim() !== ""
+        );
+
+    scriptCourant.insertAdjacentHTML("afterend", `
 <style>
 /* Apparence commune */
 .icone-menu {
@@ -63,4 +101,6 @@ document.currentScript.insertAdjacentHTML("afterend", `
   height="50"
   alt="Menu"
 />
-`);
+    `);
+
+})();

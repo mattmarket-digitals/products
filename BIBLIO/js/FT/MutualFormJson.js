@@ -128,6 +128,59 @@ function clefJsonForm(formulaire) {
     return { userMail, repJson };
 }
 
+// ==========================================================
+// GESTION DE LA CONFIDENTIALITÉ DE L'E-MAIL
+// ==========================================================
+
+const controlesConfidentialite = new WeakMap();
+
+function initialiserConfidentialiteEmail(formulaire) {
+
+    if (!(formulaire instanceof HTMLFormElement)) {
+        return;
+    }
+
+    const champEmailPublic = formulaire.querySelector("#emailPublic");
+
+    if (!champEmailPublic) {
+        return;
+    }
+
+    let actualiser = controlesConfidentialite.get(formulaire);
+
+    // Installer les écouteurs une seule fois.
+    if (!actualiser) {
+
+        actualiser = function () {
+
+            const choix = formulaire.querySelector(
+                'input[name="emailConfidentialite"]:checked'
+            );
+
+            const estPublic = choix?.value === "public";
+
+            champEmailPublic.disabled = estPublic;
+
+            if (estPublic) {
+                champEmailPublic.value = "";
+            }
+        };
+
+        formulaire
+            .querySelectorAll('input[name="emailConfidentialite"]')
+            .forEach((radio) => {
+                radio.addEventListener("change", actualiser);
+            });
+
+        controlesConfidentialite.set(formulaire, actualiser);
+    }
+
+    // Appliquer immédiatement l'état correspondant au choix actuel.
+    actualiser();
+}
+
+// Rendre la fonction accessible aux autres scripts.
+window.initialiserConfidentialiteEmail = initialiserConfidentialiteEmail;
 
 // Rendre la fonction accessible aux autres scripts.
 window.clefJsonForm = clefJsonForm;
@@ -142,6 +195,28 @@ if (!(formulaire instanceof HTMLFormElement)) {
     console.error(
         "Aucun formulaire reconnu : formulaireFerme, formulaireSante ou formulairePublic."
     );
+    
+} else {
+
+    // Initialiser la gestion de la confidentialité.
+    initialiserConfidentialiteEmail(formulaire);
+
+    formulaire.addEventListener("submit", (evenement) => {
+        evenement.preventDefault();
+
+        if (!formulaire.reportValidity()) {
+            return;
+        }
+
+        const { userMail, repJson } = clefJsonForm(formulaire);
+
+        console.log("E-mail d'identification :", userMail);
+        console.log("Réponses du formulaire :", repJson);
+
+        // L'enregistrement dans Supabase sera ajouté ici.
+    });
+}    
+/*    
 } else {
     formulaire.addEventListener("submit", (evenement) => {
         evenement.preventDefault();
@@ -158,7 +233,7 @@ if (!(formulaire instanceof HTMLFormElement)) {
         // L'enregistrement dans Supabase sera ajouté ici.
     });
 }
-
+*/
 
 /**
  * Récupère les réponses d'un formulaire et renvoie un objet.

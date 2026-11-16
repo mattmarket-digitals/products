@@ -106,6 +106,10 @@ function afficherFormulaireFerme(repJson, userMail) {
         // Texte, nombre, date, select simple, etc.
         champ.value = valeur == null ? "" : String(valeur);
     }
+    
+if (typeof window.initialiserConfidentialiteEmail === "function") {
+    window.initialiserConfidentialiteEmail(formulaire);
+}    
 
     formulaire.hidden = false;
 }

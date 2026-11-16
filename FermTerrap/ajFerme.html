@@ -14,21 +14,6 @@
     <style>
         :root{
         }
-        /* Zone du formulaire masquée au démarrage */
-#zoneFormulaire {
-    display: none;
-}
-
-/* Formulaire visible lorsque la zone est ouverte */
-#zoneFormulaire #formulaireFerme {
-    display: block;
-}
-
-/* Phrase située après le formulaire */
-#phraseFinale {
-    margin: 25px 10px;
-    text-align: center;
-}
     </style>
     
 </head>
@@ -83,15 +68,47 @@
             Merci de prendre le temps de renseigner ces informations.
             Votre contribution aidera à faire connaître votre ferme.
         </p>
+<style>
+/* Zone du formulaire masquée au démarrage */
+#zoneFormulaire {
+    display: none;
+    
+}
 
+/* Formulaire visible lorsque la zone est ouverte */
+#zoneFormulaire #formulaireFerme {
+    display: block;
+    padding-bottom: 85px;
+}
+
+/* Phrase située après le formulaire */
+#phraseFinale {
+    margin: 25px 10px;
+    text-align: center;
+}
+
+/* Centrage horizontal et largeur maîtrisée des fieldsets */
+#formulaireFerme fieldset {
+    box-sizing: border-box;
+    width: calc(100% - 24px);
+    max-width: 850px;
+    margin: 12px auto;
+
+    scroll-margin-top: 90px;
+    scroll-margin-bottom: 90px;
+}
+
+</style>
 <script
-    src="../BIBLIO/js/infPanel.js"
+    src="../BIBLIO/js/infPanel3Form.js"
     data-params='{
         "height": "70px",
         "borderColor": "green",
         "shadowColor": "green",
-        "textColor": "white",
-        "fontSize": "30px"
+        "textColor": "green",
+        "fontSize": "30px",
+        "checkInfo": "goto",
+        "formSelector": "#formulaireFerme"
     }'>
 </script>
 

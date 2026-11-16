@@ -4,74 +4,50 @@ console.log("ajFermeForm.js chargé.");
 
 document.currentScript.insertAdjacentHTML("afterend", `
 <form id="formulaireFerme" class="formulaire">
-  
-    <fieldset>
-        <legend>2. Profil et localisation</legend>
 
-        <label for="nom">Nom de la ferme *</label>
-        <input id="nom" name="nom" type="text" required maxlength="200">
-        <br>
-        <label for="type_structure">Type de structure *</label>
-        <select id="type_structure" name="type_structure" required>
-            <option value="">Choisir...</option>
-            <option>Ferme thérapeutique</option>
-            <option>Ferme pédagogique</option>
-            <option>Ferme éducative</option>
-            <option>Ferme sociale</option>
-            <option>Ferme avec médiation animale</option>
-            <option>Établissement agricole ou horticole</option>
-            <option>Établissement médico-social avec activité agricole</option>
-            <option>Association proposant des activités à la ferme</option>
-            <option>Autre</option>
+    <fieldset>
+        <legend>6. Modalités d'accueil</legend>
+
+        <label for="accueil_individuel">Accueil individuel</label>
+        <select id="accueil_individuel" name="accueil_individuel">
+            <option value="">Non renseigné</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+            <option value="À confirmer">À confirmer</option>
         </select>
         <br>
-        <label for="region">Région *</label>
-        <select id="region" name="region" required>
-            <option value="">Choisir...</option>
-            <option>Auvergne-Rhône-Alpes</option>
-            <option>Bourgogne-Franche-Comté</option>
-            <option>Bretagne</option>
-            <option>Centre-Val de Loire</option>
-            <option>Corse</option>
-            <option>Grand Est</option>
-            <option>Hauts-de-France</option>
-            <option>Normandie</option>
-            <option>Nouvelle-Aquitaine</option>
-            <option>Occitanie</option>
-            <option>Pays de la Loire</option>
-            <option>Provence-Alpes-Côte d’Azur</option>
-            <option>Île-de-France</option>
-            <option>Guadeloupe</option>
-            <option>Martinique</option>
-            <option>Guyane</option>
-            <option>La Réunion</option>
-            <option>Mayotte</option>
+        <label for="accueil_groupe">Accueil en groupe</label>
+        <select id="accueil_groupe" name="accueil_groupe">
+            <option value="">Non renseigné</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+            <option value="À confirmer">À confirmer</option>
         </select>
         <br>
-        <label for="departement">Département *</label>
-        <input id="departement" name="departement" type="text"
-               required maxlength="100"
-               placeholder="Ex. : Moselle (57)">
+        <label for="accueil_institutions">Accueil d'institutions</label>
+        <select id="accueil_institutions" name="accueil_institutions">
+            <option value="">Non renseigné</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+            <option value="À confirmer">À confirmer</option>
+        </select>
         <br>
-        <label for="commune">Commune *</label>
-        <input id="commune" name="commune" type="text"
-               required maxlength="150">
+        <label for="accessibilite_pmr">Accessibilité PMR</label>
+        <select id="accessibilite_pmr" name="accessibilite_pmr">
+            <option value="">Non renseignée</option>
+            <option value="Accessible">Accessible</option>
+            <option value="Partiellement accessible">Partiellement accessible</option>
+            <option value="Non accessible">Non accessible</option>
+            <option value="À confirmer">À confirmer</option>
+        </select>
         <br>
-        <label for="adresse">Adresse</label>
-        <input id="adresse" name="adresse" type="text" maxlength="250">
-        <br>
-        <label for="code_postal">Code postal *</label>
-        <input id="code_postal" name="code_postal" type="text"
-               required inputmode="numeric" pattern="[0-9]{5}"
-               maxlength="5" placeholder="Ex. : 57000">
-        <br>
-        <label for="latitude">Latitude</label>
-        <input id="latitude" name="latitude" type="number"
-               min="-90" max="90" step="any">
-        <br>
-        <label for="longitude">Longitude</label>
-        <input id="longitude" name="longitude" type="number"
-               min="-180" max="180" step="any">
+        <label for="hebergement">Hébergement</label>
+        <select id="hebergement" name="hebergement">
+            <option value="">Non renseigné</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+            <option value="À confirmer">À confirmer</option>
+        </select>
     </fieldset>
 
     <fieldset>
@@ -162,62 +138,88 @@ document.currentScript.insertAdjacentHTML("afterend", `
     </fieldset>
 
     <fieldset>
-        <legend>6. Modalités d'accueil</legend>
-
-        <label for="accueil_individuel">Accueil individuel</label>
-        <select id="accueil_individuel" name="accueil_individuel">
-            <option value="">Non renseigné</option>
-            <option value="Oui">Oui</option>
-            <option value="Non">Non</option>
-            <option value="À confirmer">À confirmer</option>
-        </select>
-        <br>
-        <label for="accueil_groupe">Accueil en groupe</label>
-        <select id="accueil_groupe" name="accueil_groupe">
-            <option value="">Non renseigné</option>
-            <option value="Oui">Oui</option>
-            <option value="Non">Non</option>
-            <option value="À confirmer">À confirmer</option>
-        </select>
-        <br>
-        <label for="accueil_institutions">Accueil d'institutions</label>
-        <select id="accueil_institutions" name="accueil_institutions">
-            <option value="">Non renseigné</option>
-            <option value="Oui">Oui</option>
-            <option value="Non">Non</option>
-            <option value="À confirmer">À confirmer</option>
-        </select>
-        <br>
-        <label for="accessibilite_pmr">Accessibilité PMR</label>
-        <select id="accessibilite_pmr" name="accessibilite_pmr">
-            <option value="">Non renseignée</option>
-            <option value="Accessible">Accessible</option>
-            <option value="Partiellement accessible">Partiellement accessible</option>
-            <option value="Non accessible">Non accessible</option>
-            <option value="À confirmer">À confirmer</option>
-        </select>
-        <br>
-        <label for="hebergement">Hébergement</label>
-        <select id="hebergement" name="hebergement">
-            <option value="">Non renseigné</option>
-            <option value="Oui">Oui</option>
-            <option value="Non">Non</option>
-            <option value="À confirmer">À confirmer</option>
-        </select>
-        <br>
+        <legend>7. Source de l'information</legend>
         <label for="tarifs">Tarifs et conditions</label>
         <br>
         <textarea id="tarifs" name="tarifs" rows="4"
                   maxlength="2000"
                   placeholder="Ex. : tarif par séance, sur devis..."></textarea>
-    </fieldset>
-
-    <fieldset>
-        <legend>7. Source de l'information</legend>
+                <br>
+                
         <label for="source">Source (site web ou référence)</label>
         <input id="source" name="source" type="url"
                placeholder="https://...">
         <p>La date de vérification et le niveau de confiance seront renseignés par FermTerrap après contrôle.</p>
+        
+    </fieldset>
+    
+    <fieldset>
+        <legend>2. Profil et localisation</legend>
+
+        <label for="nom">Nom de la ferme *</label>
+        <input id="nom" name="nom" type="text" required maxlength="200">
+        <br>
+        <label for="type_structure">Type de structure *</label>
+        <select id="type_structure" name="type_structure" required>
+            <option value="">Choisir...</option>
+            <option>Ferme thérapeutique</option>
+            <option>Ferme pédagogique</option>
+            <option>Ferme éducative</option>
+            <option>Ferme sociale</option>
+            <option>Ferme avec médiation animale</option>
+            <option>Établissement agricole ou horticole</option>
+            <option>Établissement médico-social avec activité agricole</option>
+            <option>Association proposant des activités à la ferme</option>
+            <option>Autre</option>
+        </select>
+        <br>
+        <label for="region">Région *</label>
+        <select id="region" name="region" required>
+            <option value="">Choisir...</option>
+            <option>Auvergne-Rhône-Alpes</option>
+            <option>Bourgogne-Franche-Comté</option>
+            <option>Bretagne</option>
+            <option>Centre-Val de Loire</option>
+            <option>Corse</option>
+            <option>Grand Est</option>
+            <option>Hauts-de-France</option>
+            <option>Normandie</option>
+            <option>Nouvelle-Aquitaine</option>
+            <option>Occitanie</option>
+            <option>Pays de la Loire</option>
+            <option>Provence-Alpes-Côte d’Azur</option>
+            <option>Île-de-France</option>
+            <option>Guadeloupe</option>
+            <option>Martinique</option>
+            <option>Guyane</option>
+            <option>La Réunion</option>
+            <option>Mayotte</option>
+        </select>
+        <br>
+        <label for="departement">Département *</label>
+        <input id="departement" name="departement" type="text"
+               required maxlength="100"
+               placeholder="Ex. : Moselle (57)">
+        <br>
+        <label for="commune">Commune *</label>
+        <input id="commune" name="commune" type="text"
+               required maxlength="150">
+        <br>
+        <label for="adresse">Adresse</label>
+        <input id="adresse" name="adresse" type="text" maxlength="250">
+        <br>
+        <label for="code_postal">Code postal *</label>
+        <input id="code_postal" name="code_postal" type="text"
+               required inputmode="numeric" pattern="[0-9]{5}"
+               maxlength="5" placeholder="Ex. : 57000">
+        <br>
+        <label for="latitude">Latitude</label>
+        <input id="latitude" name="latitude" type="number"
+               min="-90" max="90" step="any">
+        <br>
+        <label for="longitude">Longitude</label>
+        <input id="longitude" name="longitude" type="number"
+               min="-180" max="180" step="any">
     </fieldset>
 
         <fieldset>
@@ -252,11 +254,6 @@ document.currentScript.insertAdjacentHTML("afterend", `
                 >
                 Public
             </label>
-        </fieldset>
-
-            <fieldset>
-                <legend>1. Coordonnées</legend>
-            
                 <div class="champ">
                     <label for="emailPublic">E-mail public :</label>
                     <input
@@ -266,7 +263,12 @@ document.currentScript.insertAdjacentHTML("afterend", `
                         autocomplete="off"
                     >
                 </div>
+            
+        </fieldset>
 
+            <fieldset>
+                <legend>1. Coordonnées</legend>
+            
                 <label for="telephone">Téléphone</label>
                 <input id="telephone" name="telephone" type="tel"
                        autocomplete="tel">

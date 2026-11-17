@@ -5,9 +5,11 @@ console.log("ajFermeForm.js chargé.");
 document.currentScript.insertAdjacentHTML("afterend", `
 <form id="formulaireFerme" class="formulaire">
 
-    <fieldset>
-        <legend>6. Modalités d'accueil</legend>
+<fieldset class="fieldset-modalites">
+    <legend>1. Modalités d'accueil</legend>
 
+    <div class="modalite-item">
+        <p>👤</p>
         <label for="accueil_individuel">Accueil individuel</label>
         <select id="accueil_individuel" name="accueil_individuel">
             <option value="">Non renseigné</option>
@@ -15,7 +17,10 @@ document.currentScript.insertAdjacentHTML("afterend", `
             <option value="Non">Non</option>
             <option value="À confirmer">À confirmer</option>
         </select>
-        <br>
+    </div>
+
+    <div class="modalite-item">
+        <p>👥</p>
         <label for="accueil_groupe">Accueil en groupe</label>
         <select id="accueil_groupe" name="accueil_groupe">
             <option value="">Non renseigné</option>
@@ -23,7 +28,10 @@ document.currentScript.insertAdjacentHTML("afterend", `
             <option value="Non">Non</option>
             <option value="À confirmer">À confirmer</option>
         </select>
-        <br>
+    </div>
+
+    <div class="modalite-item">
+        <p>👮</p>
         <label for="accueil_institutions">Accueil d'institutions</label>
         <select id="accueil_institutions" name="accueil_institutions">
             <option value="">Non renseigné</option>
@@ -31,7 +39,10 @@ document.currentScript.insertAdjacentHTML("afterend", `
             <option value="Non">Non</option>
             <option value="À confirmer">À confirmer</option>
         </select>
-        <br>
+    </div>
+
+    <div class="modalite-item">
+        <p>🦽</p>
         <label for="accessibilite_pmr">Accessibilité PMR</label>
         <select id="accessibilite_pmr" name="accessibilite_pmr">
             <option value="">Non renseignée</option>
@@ -40,7 +51,10 @@ document.currentScript.insertAdjacentHTML("afterend", `
             <option value="Non accessible">Non accessible</option>
             <option value="À confirmer">À confirmer</option>
         </select>
-        <br>
+    </div>
+
+    <div class="modalite-item">
+        <p>🛌</p>
         <label for="hebergement">Hébergement</label>
         <select id="hebergement" name="hebergement">
             <option value="">Non renseigné</option>
@@ -48,7 +62,8 @@ document.currentScript.insertAdjacentHTML("afterend", `
             <option value="Non">Non</option>
             <option value="À confirmer">À confirmer</option>
         </select>
-    </fieldset>
+    </div>
+</fieldset>
 
     <fieldset>
         <legend>3. Publics accueillis</legend>
@@ -293,7 +308,9 @@ document.currentScript.insertAdjacentHTML("afterend", `
     En attente de saisie.
 </div>
 
+<!--
     <button type="submit">Proposer cette ferme</button>
+-->
     <!-- <p id="messageFormulaire" role="status" aria-live="polite"></p> -->
 </form>
 `);

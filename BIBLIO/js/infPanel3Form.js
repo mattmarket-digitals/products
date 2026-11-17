@@ -236,7 +236,51 @@ function changerEtape(index) {
     // ==================================================
     // 6. AFFICHAGE D'UN FIELDSET
     // ==================================================
+    
 
+function afficherFieldset(index, defiler = true) {
+
+    if (index < 0 || index >= fieldsets.length) return;
+
+    fieldsets.forEach((fieldset, i) => {
+        fieldset.style.display = i === index ? "block" : "none";
+    });
+
+    indexActuel = index;
+
+    // État du bouton gauche
+    boutonGauche.disabled = indexActuel === 0;
+
+    // Le bouton droit reste actif, même au dernier fieldset.
+    boutonDroite.disabled = false;
+
+    // Au dernier fieldset, le bouton devient une coche.
+    const estDernier = indexActuel === fieldsets.length - 1;
+
+    boutonDroite.textContent = estDernier ? "✅" : "▶|";
+
+    boutonDroite.setAttribute(
+        "aria-label",
+        estDernier
+            ? "Valider le formulaire"
+            : "Afficher le fieldset suivant"
+    );
+
+    // Submit du formulaire visible uniquement au dernier fieldset.
+    if (boutonSubmit) {
+        boutonSubmit.style.display = estDernier ? "" : "none";
+    }
+
+    // Défilement vers le haut du nouveau fieldset
+    if (defiler) {
+        fieldsets[index].scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
+
+/*
     function afficherFieldset(index, defiler = true) {
 
         if (index < 0 || index >= fieldsets.length) return;
@@ -261,6 +305,7 @@ function changerEtape(index) {
             positionnerFieldset(fieldsets[index]);
         }
     }
+*/
 /*
         // Défilement vers le haut du nouveau fieldset
         if (defiler) {
@@ -341,6 +386,49 @@ boutonGauche.addEventListener("click", () => {
     // ==================================================
     // 10. NAVIGATION VERS LE FIELDSET SUIVANT
     // ==================================================
+
+
+boutonDroite.addEventListener("click", () => {
+
+    // Au dernier fieldset : déclencher le submit.
+    if (indexActuel === fieldsets.length - 1) {
+
+        if (typeof formulaire.requestSubmit === "function") {
+
+            if (boutonSubmit) {
+                formulaire.requestSubmit(boutonSubmit);
+            } else {
+                formulaire.requestSubmit();
+            }
+
+        } else {
+            console.error(
+                "Votre navigateur ne permet pas requestSubmit()."
+            );
+        }
+
+        return;
+    }
+
+    // Mode pasapas : vérifier avant de continuer.
+    if (modeValidation === "pasapas") {
+
+        const erreur = premierChampInvalide(
+            fieldsets[indexActuel]
+        );
+
+        if (erreur) {
+            signalerErreur(erreur);
+            return;
+        }
+    }
+
+    // Passage à l'étape suivante.
+    afficherFieldset(indexActuel + 1);
+
+});
+
+/*
 boutonDroite.addEventListener("click", () => {
 
     if (modeValidation === "pasapas") {
@@ -358,6 +446,7 @@ boutonDroite.addEventListener("click", () => {
     changerEtape(indexActuel + 1);
 
 });
+*/
 /*
     boutonDroite.addEventListener("click", () => {
 

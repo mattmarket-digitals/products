@@ -1,0 +1,4 @@
+Pour connaitre les differences avec le dernier commit sur Termux :
+
+git diff HEAD
+

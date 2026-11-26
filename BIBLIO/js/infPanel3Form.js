@@ -2,7 +2,7 @@
 "use strict";
 
 // infPanel.js
-console.log("infPanel.js chargé");
+console.log("infPanel3Form.js chargé");
 
 (() => {
 
@@ -13,7 +13,7 @@ console.log("infPanel.js chargé");
     const scriptPrincipal = document.currentScript;
 
     if (!scriptPrincipal) {
-        console.error("infPanel.js : balise script introuvable.");
+        console.error("infPanel3Form.js : balise script introuvable.");
         return;
     }
 
@@ -22,7 +22,7 @@ console.log("infPanel.js chargé");
     try {
         params = JSON.parse(scriptPrincipal.dataset.params || "{}");
     } catch (erreur) {
-        console.error("infPanel.js : paramètres invalides.", erreur);
+        console.error("infPanel3Form.js : paramètres invalides.", erreur);
         return;
     }
 
@@ -51,6 +51,10 @@ console.log("infPanel.js chargé");
     const margeHaut = params.scrollMarginTop || "85px";
     const margeBas = params.scrollMarginBottom || "85px";
 
+// Présentation du fieldset Modalités d'accueil
+const margeLaterale = params.fieldsetSideGap || "2px";
+const tailleIcone = params.modaliteIconSize || "38px";
+const espaceModalites = params.modaliteRowGap || "12px";
 
     // ==================================================
     // 2. RÉCUPÉRATION DU FORMULAIRE ET DES FIELDSETS
@@ -71,7 +75,7 @@ console.log("infPanel.js chargé");
     );
 
     if (fieldsets.length === 0) {
-        console.error("infPanel.js : aucun fieldset trouvé.");
+        console.error("infPanel3Form.js : aucun fieldset trouvé.");
         return;
     }
 
@@ -156,6 +160,40 @@ console.log("infPanel.js chargé");
                 cursor: not-allowed;
             }
 
+
+            /* ==================================================
+               FIELDSETS
+               ================================================== */
+
+            #formulaireFerme fieldset {
+                box-sizing: border-box;
+                width: calc(100% - ${margeLaterale} - ${margeLaterale});
+                max-width: 850px;
+                margin-left: ${margeLaterale};
+                margin-right: ${margeLaterale};
+            }
+
+            /* ==================================================
+               MODALITÉS D'ACCUEIL
+               ================================================== */
+
+            #formulaireFerme .fieldset-modalites {
+                width: calc(100% - ${margeLaterale} - ${margeLaterale});
+                max-width: none;
+                margin-left: ${margeLaterale};
+                margin-right: ${margeLaterale};
+                box-sizing: border-box;
+            }
+
+            #formulaireFerme .modalite-item {
+                margin-top: ${espaceModalites};
+                margin-bottom: ${espaceModalites};
+            }
+
+            #formulaireFerme .modalite-item p {
+                font-size: ${tailleIcone};
+            }
+
         </style>
     `);
 
@@ -172,13 +210,16 @@ console.log("infPanel.js chargé");
     );
 
     if (!boutonSubmit) {
-        console.warn("infPanel.js : bouton Submit introuvable.");
+        console.warn("infPanel3Form.js : bouton Submit introuvable.");
     }
 
 
     // ==================================================
     // 5. POSITION ACTUELLE
     // ==================================================
+/*
+let indexActuel = 0;
+*/
 
     let indexActuel = fieldsets.findIndex(
         fieldset => getComputedStyle(fieldset).display !== "none"
@@ -538,11 +579,18 @@ boutonDroite.addEventListener("click", () => {
     } else {
 
         // Initialisation des modes pasapas et goto
+/*
+// Le premier fieldset est toujours affiché au démarrage.
+indexActuel = 0;
+afficherFieldset(0, false);
+*/
+
         afficherFieldset(indexActuel, false);
+
 
     }
 
-    console.log("infPanel.js : mode de validation =", modeValidation);
-    console.log("infPanel.js : nombre de fieldsets =", fieldsets.length);
+    console.log("infPanel3Form.js : mode de validation =", modeValidation);
+    console.log("infPanel3Form.js : nombre de fieldsets =", fieldsets.length);
 
 })();

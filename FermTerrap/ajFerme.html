@@ -55,6 +55,8 @@
         <button type="button" id="boutonCommencer">
             Commencez le formulaire
         </button>
+        <br><br>
+        <br><br>
 
     </section>
 
@@ -69,13 +71,19 @@
             Votre contribution aidera à faire connaître votre ferme.
         </p>
 <style>
-/* Zone du formulaire masquée au démarrage */
+/* Les fieldsets restent masqués jusqu'à l'initialisation du panneau 
+#formulaireFerme fieldset {
+    display: none;
+}
+*/
+/* Zone du formulaire masquée au démarrage*/
 #zoneFormulaire {
     display: none;
     
 }
-
+ 
 /* Formulaire visible lorsque la zone est ouverte */
+
 #zoneFormulaire #formulaireFerme {
     display: block;
     padding-bottom: 85px;
@@ -168,6 +176,26 @@
     box-sizing: border-box;
 }
 
+/* Présentation du fieldset Modalités d'accueil
+
+#formulaireFerme .fieldset-modalites {
+    margin-left: ${margeLaterale};
+    margin-right: ${margeLaterale};
+    padding-left: 6px;
+    padding-right: 6px;
+    box-sizing: border-box;
+    width: calc(100% - 2 * ${margeLaterale});
+}
+
+#formulaireFerme .modalite-item {
+    margin-top: ${espaceModalites};
+    margin-bottom: ${espaceModalites};
+}
+
+#formulaireFerme .modalite-item p {
+    font-size: ${tailleIcone};
+}
+ */
 </style>
 <script
     src="../BIBLIO/js/infPanel3Form.js"
@@ -178,10 +206,12 @@
         "textColor": "green",
         "fontSize": "30px",
         "checkInfo": "goto",
-        "formSelector": "#formulaireFerme"
+        "formSelector": "#formulaireFerme",
+        "fieldsetSideGap": "20px",
+        "modaliteIconSize": "60px",
+        "modaliteRowGap": "100px"
     }'>
 </script>
-
 <!--
 <script
     src="../BIBLIO/js/infPanel.js"
